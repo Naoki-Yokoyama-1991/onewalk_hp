@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ベーススタイル設定 */
+@layer base {
+  html,
+  body {
+    @apply text-neutral-900 text-base;
+  }
+
+  li {
+    @apply list-none;
+  }
+}
