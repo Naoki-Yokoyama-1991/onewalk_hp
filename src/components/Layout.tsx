@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import { ReactNode } from 'react';
+import { ReactNode, FC } from 'react';
 import Header from './Header';
 
 type Props = {
   children?: ReactNode;
 };
 
-const Layout = ({ children }: Props) => {
+const Layout: FC = ({ children }: Props) => {
   return (
     <div>
       <Head>
