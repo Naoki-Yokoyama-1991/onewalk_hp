@@ -6,7 +6,7 @@
 @layer base {
   html,
   body {
-    @apply text-neutral-900 text-base;
+    @apply text-black text-base;
   }
 
   li {

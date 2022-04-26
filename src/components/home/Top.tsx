@@ -1,8 +1,13 @@
-import Image from 'next/image';
-export default function Top() {
+import Left from './Left';
+import Right from './Right';
+
+const Top = () => {
   return (
-    <div>
-      <Image src='/../public/images/main.jpg' width={100} height={100} objectFit='contain' alt='' />
+    <div className='grid grid-cols-homeTop'>
+      <Left />
+      <Right />
     </div>
   );
-}
+};
+
+export default Top;
