@@ -1,11 +1,15 @@
 import type { NextPage } from 'next';
+import Who from '../components/home/Who';
+import Top from '../components/home/top/Top';
 
-import Top from '../components/home/Top';
 const Home: NextPage = () => {
   return (
-    <div>
+    <>
       <Top />
-    </div>
+      <main className='mx-auto max-w-1080'>
+        <Who />
+      </main>
+    </>
   );
 };
 export default Home;
