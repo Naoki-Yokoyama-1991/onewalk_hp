@@ -2,10 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import ImageObject from '../data/Images';
-import { routes } from '../data/routes';
+import { headerRoutes } from '../data/routes';
 
 const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
-  <Link href={path}>
+  <Link href={path} passHref>
     <a className='inline-flex items-center'>
       <li key={path} className='mr-10 font-semibold uppercase'>
         {children}
@@ -14,7 +14,7 @@ const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
   </Link>
 );
 
-export default function Navbar() {
+export function HeaderNav() {
   return (
     <nav className='flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
       <div>
@@ -27,12 +27,12 @@ export default function Navbar() {
               objectFit='contain'
               alt={ImageObject.NavImages[0].alt}
             />
-            <span className='ml-2 text-2xl font-medium uppercase'>ONEWALK</span>
+            <span className='ml-2 text-2xl  font-bold uppercase'>ONEWALK</span>
           </a>
         </Link>
       </div>
       <div>
-        {routes.map((link, index) => (
+        {headerRoutes.map((link, index) => (
           <NavLink key={index} path={link.path}>
             {link.name}
           </NavLink>
@@ -51,4 +51,7 @@ export default function Navbar() {
     </nav>
   );
 }
-``;
+
+export function FooterNav() {
+  return <div></div>;
+}
