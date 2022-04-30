@@ -19,6 +19,7 @@ module.exports = {
       colors: {
         orange: '#E8614F',
         orange_pale: '#FDEFEE',
+        skin: '#F5F2F0',
       },
       textColor: {
         BaseColor: '#222222',
@@ -33,6 +34,9 @@ module.exports = {
       borderColor: {
         BaseColor: '#222222',
       },
+      borderWidth: {
+        1.5: '0.1rem',
+      },
       borderRadius: {
         144: '9rem',
         80: '5rem',
@@ -42,6 +46,19 @@ module.exports = {
         Who: 'minmax(0,1fr) 33rem',
         Vision: '33.75rem minmax(0,1fr) ',
         Service: 'minmax(0,1fr) 52rem',
+      },
+      scale: {
+        1.15: '1.15',
+        1.08: '1.06',
+      },
+      keyframes: {
+        wiggle: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.12)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 10s linear 0s 1 normal both',
       },
     },
   },

@@ -2,9 +2,9 @@ import type { NextPage } from 'next';
 import Careers from '../components/home/Careers';
 import News from '../components/home/News';
 import Service from '../components/home/Service';
+import Top from '../components/home/Top';
 import Vision from '../components/home/Vision';
 import Who from '../components/home/Who';
-import Top from '../components/home/top/Top';
 
 const Home: NextPage = () => {
   return (

@@ -1,20 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FC } from 'react';
 import { ReactNode } from 'react';
 import ImageObject from '../data/Images';
-import { headerRoutes } from '../data/routes';
+import { headerRoutes, footerRoutes } from '../data/routes';
 
-const NavLink = ({ children, path }: { children: ReactNode; path: string }) => (
-  <Link href={path} passHref>
-    <a className='inline-flex items-center'>
-      <li key={path} className='mr-10 font-semibold uppercase'>
-        {children}
-      </li>
-    </a>
-  </Link>
-);
+const HeadNavLink = ({ children, path }: { children: ReactNode; path: string }) => {
+  return (
+    <Link href={path} passHref>
+      <a className='inline-flex items-center'>
+        <li className='mr-10 font-semibold uppercase'>{children}</li>
+      </a>
+    </Link>
+  );
+};
 
-export function HeaderNav() {
+const FootNavLink = ({ children, path }: { children: ReactNode; path: string }) => {
+  return (
+    <Link href={path} passHref>
+      <a className='inline-flex items-center'>{children}</a>
+    </Link>
+  );
+};
+
+export const HeaderNav: FC = () => {
   return (
     <nav className='flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
       <div>
@@ -22,20 +31,20 @@ export function HeaderNav() {
           <a className='inline-flex items-center'>
             <Image
               src={ImageObject.NavImages[0].src}
-              width={30}
-              height={30}
+              width={26}
+              height={26}
               objectFit='contain'
               alt={ImageObject.NavImages[0].alt}
             />
-            <span className='ml-2 text-2xl  font-bold uppercase'>ONEWALK</span>
+            <span className='ml-2 text-xl font-semibold uppercase'>ONEWALK</span>
           </a>
         </Link>
       </div>
       <div>
         {headerRoutes.map((link, index) => (
-          <NavLink key={index} path={link.path}>
+          <HeadNavLink key={index} path={link.path}>
             {link.name}
-          </NavLink>
+          </HeadNavLink>
         ))}
         <svg
           className='inline-block ml-9 w-10'
@@ -50,8 +59,27 @@ export function HeaderNav() {
       </div>
     </nav>
   );
-}
+};
 
-export function FooterNav() {
-  return <div></div>;
-}
+export const FooterNav: FC = () => {
+  return (
+    <nav className='flex justify-between mx-auto max-w-1080 '>
+      <div>
+        {footerRoutes.map((link, index) => (
+          <FootNavLink key={index} path={link.path}>
+            <li className='mr-10 font-semibold uppercase'> {link.name}</li>
+          </FootNavLink>
+        ))}
+      </div>
+      <div>
+        {ImageObject.snsImages.map((link, index) => (
+          <FootNavLink key={index} path={link.path}>
+            <span className='ml-9'>
+              <Image src={link.src} width={25} height={25} objectFit='contain' alt={link.alt} />
+            </span>
+          </FootNavLink>
+        ))}
+      </div>
+    </nav>
+  );
+};
