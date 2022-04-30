@@ -1,0 +1,20 @@
+@tailwind components;
+/*Swiper*/
+
+@layer components {
+  .custom_bullet {
+    @apply bg-orange;
+  }
+
+  .custom_bullet_active {
+    @apply bg-orange;
+  }
+
+  .active {
+    @apply animate-wiggle;
+  }
+
+  .noactive {
+    @apply scale-1.08;
+  }
+}
