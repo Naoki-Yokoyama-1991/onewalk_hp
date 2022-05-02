@@ -12,6 +12,7 @@
     "test-all": "run-s lint format lint:fix"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.0",
     "next": "12.1.5",
     "postcss-cli": "^9.1.0",
     "react": "18.0.0",

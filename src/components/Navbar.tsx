@@ -1,17 +1,52 @@
+import { Menu, Transition } from '@headlessui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import ImageObject from '../data/Images';
-import { headerRoutes, footerRoutes } from '../data/routes';
+import { headerRoutes, footerRoutes, menuRoutes } from '../data/routes';
+import MenuLink from './home/MenuLink';
 
+//Navigation
 const HeadNavLink = ({ children, path }: { children: ReactNode; path: string }) => {
   return (
-    <Link href={path} passHref>
-      <a className='inline-flex items-center'>
-        <li className='mr-10 font-semibold uppercase'>{children}</li>
-      </a>
-    </Link>
+    <Menu>
+      {({ open }) => (
+        <>
+          <Menu.Button>
+            <Link href={path} passHref>
+              <a className='inline-flex items-center'>
+                <li className='mr-10 font-semibold uppercase'>{children}</li>
+              </a>
+            </Link>
+          </Menu.Button>
+          <Transition
+            show={open}
+            enter='transition ease-out duration-100'
+            enterFrom='transform opacity-0 scale-95'
+            enterTo='transform opacity-100 scale-100'
+            leave='transition ease-in duration-75'
+            leaveFrom='transform opacity-100 scale-100'
+            leaveTo='transform opacity-0 scale-95'
+          >
+            <Menu.Items>
+              {menuRoutes.map((menu, index) => (
+                <Menu.Item key={index}>
+                  {({ active }) => (
+                    <li>
+                      <Link href={menu.path}>
+                        <a className={`${active && 'bg-blue-50'}`}></a>
+                      </Link>
+                      {menu.name}
+                    </li>
+                  )}
+                </Menu.Item>
+              ))}
+            </Menu.Items>
+          </Transition>
+        </>
+      )}
+    </Menu>
   );
 };
 

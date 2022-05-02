@@ -6,7 +6,7 @@
 @layer base {
   html,
   body {
-    @apply text-BaseColor text-base m-0 font-base;
+    @apply text-BaseColor text-base m-0 font-base tracking-wide;
   }
 
   li {
