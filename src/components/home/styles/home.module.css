@@ -17,4 +17,8 @@
   .noactive {
     @apply scale-1.08;
   }
+
+  .scrolldown {
+    @apply before:animate-cirlemovehide;
+  }
 }

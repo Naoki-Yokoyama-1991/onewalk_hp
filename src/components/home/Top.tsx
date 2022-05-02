@@ -16,6 +16,13 @@ const Top: React.FC = () => {
   return (
     <div className='grid relative grid-cols-Top pt-24 h-screen '>
       <Swiper
+        onSlideChange={(swiper) => {
+          if (swiper.realIndex > 0) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            swiper.params.autoplay.delay = 2000;
+          }
+        }}
         onInit={(swiper) => {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
@@ -26,7 +33,7 @@ const Top: React.FC = () => {
           swiper.navigation.init();
           swiper.navigation.update();
         }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 3970, disableOnInteraction: false }}
         speed={2200}
         effect='fade'
         fadeEffect={{ crossFade: true }}
@@ -62,7 +69,9 @@ const Top: React.FC = () => {
             className='block my-8 w-2 h-2  border-r-1.5 border-b-1.5 border-BaseColor hover:border-orange  border-solid hover:transition-all duration-700 hover:duration-700 hover:scale-150 rotate-45 cursor-pointer'
           ></span>
         </div>
-        <span className='absolute bottom-24 text-xs vertical'>SCROLL</span>
+        <span className='before:absolute after:absolute absolute after:top-16 before:bottom-10 bottom-24 before:left-1 after:left-1.5 after:w-1.5 before:w-2 before:h-2 text-xs tracking-wider before:content-[""] after:content-[""] before:bg-orange after:bg-BaseColor before:rounded-full before:animate-circlemove vertical '>
+          SCROLL
+        </span>
       </div>
     </div>
   );
