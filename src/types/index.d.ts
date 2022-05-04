@@ -24,4 +24,31 @@ declare module 'types' {
     path: string;
     className: string;
   }
+
+  export interface menuDropNav {
+    title: string;
+    path: string;
+    suvNav: [
+      {
+        title: string;
+        path: string;
+      },
+      {
+        title: string;
+        path: string;
+      },
+      {
+        title: string;
+        path: string;
+      },
+      {
+        title: string;
+        path: string;
+      },
+      {
+        title: string;
+        path: string;
+      },
+    ];
+  }
 }

@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import Careers from '../components/home/Careers';
 import News from '../components/home/News';
 import Service from '../components/home/Service';
+import Tab from '../components/home/Tab';
 import Top from '../components/home/Top';
 import Vision from '../components/home/Vision';
 import Who from '../components/home/Who';
