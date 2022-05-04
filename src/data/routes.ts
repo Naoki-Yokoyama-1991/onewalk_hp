@@ -14,11 +14,6 @@ interface FooterNavs {
   path: string;
 }
 
-interface MenurNavs {
-  name: string;
-  path: string;
-}
-
 export const footerRoutes: FooterNavs[] = [
   { name: 'TOP', path: '/' },
   { name: 'COMPANY', path: '/company' },
@@ -27,10 +22,136 @@ export const footerRoutes: FooterNavs[] = [
   { name: 'CAREERS', path: '/careers' },
 ];
 
-export const menuRoutes: MenurNavs[] = [
-  { name: 'PHILOSOPHY', path: '/philosophy' },
-  { name: 'TOP MESSAGE', path: '/message' },
-  { name: 'OUTLINE', path: '/outline' },
-  { name: 'EXECUTIVES', path: '/exectives' },
-  { name: 'HISTORY', path: '/history' },
+export interface menuDropNav {
+  title: string;
+  path: string;
+  suvNav: [
+    {
+      title: string;
+      path: string;
+    },
+    {
+      title: string;
+      path: string;
+    },
+    {
+      title: string;
+      path: string;
+    },
+    {
+      title: string;
+      path: string;
+    },
+    {
+      title: string;
+      path: string;
+    },
+  ];
+}
+
+export const menuRoutes: menuDropNav[] = [
+  {
+    title: 'COMPANY',
+    path: '/company',
+    suvNav: [
+      {
+        title: 'PHILOSOPHY',
+        path: '/philosophy',
+      },
+      {
+        title: 'TOP MESSAGE',
+        path: '/message',
+      },
+      {
+        title: 'OUTLINE',
+        path: '/outline',
+      },
+      {
+        title: 'EXECUTIVES',
+        path: '/executives',
+      },
+      {
+        title: 'HISTORY',
+        path: '/history',
+      },
+    ],
+  },
+  {
+    title: 'SERVICE',
+    path: '/service',
+    suvNav: [
+      {
+        title: 'SERVICE',
+        path: '/service',
+      },
+      {
+        title: 'SERVICE',
+        path: '/service',
+      },
+      {
+        title: 'SERVICE',
+        path: '/service',
+      },
+      {
+        title: 'SERVICE',
+        path: '/service',
+      },
+      {
+        title: 'SERVICE',
+        path: '/service',
+      },
+    ],
+  },
+  {
+    title: 'NEWS',
+    path: '/news',
+    suvNav: [
+      {
+        title: 'NEWS',
+        path: '/news',
+      },
+      {
+        title: 'NEWS',
+        path: '/news',
+      },
+      {
+        title: 'NEWS',
+        path: '/news',
+      },
+      {
+        title: 'NEWS',
+        path: '/news',
+      },
+      {
+        title: 'NEWS',
+        path: '/news',
+      },
+    ],
+  },
+  {
+    title: 'CAREERS',
+    path: '/careers',
+    suvNav: [
+      {
+        title: 'CAREERS',
+        path: '/careers',
+      },
+      {
+        title: 'CAREERS',
+        path: '/careers',
+      },
+      {
+        title: 'CAREERS',
+        path: '/careers',
+      },
+      {
+        title: 'CAREERS',
+        path: '/careers',
+      },
+      {
+        title: 'CAREERS',
+        path: '/careers',
+      },
+    ],
+  },
 ];

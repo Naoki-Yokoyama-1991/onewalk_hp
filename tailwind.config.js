@@ -21,6 +21,7 @@ module.exports = {
         orange: '#E8614F',
         orange_pale: '#FDEFEE',
         skin: '#F5F2F0',
+        gray_pale: '#F9F9F9',
       },
       backgroundColor: {
         BaseColor: '#222222',
@@ -40,10 +41,15 @@ module.exports = {
       },
       borderWidth: {
         1.5: '0.1rem',
+        3: '3px',
       },
       borderRadius: {
         144: '9rem',
+        110: '9rem',
         80: '5rem',
+      },
+      spacing: {
+        82: '82px',
       },
       gridTemplateColumns: {
         Top: 'minmax(0,1fr) 5rem',
@@ -55,7 +61,10 @@ module.exports = {
         1.15: '1.15',
         1.08: '1.05',
       },
-      inset: {},
+
+      inset: {
+        62: '55px',
+      },
       keyframes: {
         wiggle: {
           '0%': { transform: 'scale(1)' },
