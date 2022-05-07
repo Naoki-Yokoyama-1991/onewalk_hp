@@ -1,40 +1,57 @@
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import React, { FC } from 'react';
+import Link from 'next/link';
+import React, { FC, useState, useRef } from 'react';
 import ImageObject from './Images';
+import useOffsetTop from './libs/useScroll';
 
 const Careers: FC = () => {
-  const router = useRouter();
+  const iconRef = useRef(null);
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
+  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ');
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    router.push('/careers').catch((err) => {
-      //エラー処理
-      console.error(err);
-    });
-  };
+  //classNameButton
+  const [classs, setClasss] = useState<string>('');
+  const [text, setText] = useState<string>('');
 
   return (
     <section className='mt-64 w-full '>
-      <div className=' relative ml-auto w-CareersImage'>
+      <div className=' relative ml-auto w-CareersImage' ref={iconRef}>
         <Image
           src={ImageObject.CareerseImgs[0].src}
           alt={ImageObject.CareerseImgs[0].alt}
-          className={ImageObject.CareerseImgs[0].className}
+          className={`opacity-0   ${scrollStyle}`}
           priority={true}
           objectFit='cover'
         />
-        <button
-          type='button'
-          className='grid absolute right-12 bottom-10 grid-cols-2 items-center px-7 mx-auto mt-20 w-56 h-16 bg-white  rounded-full '
-          onClick={handleClick}
-        >
-          <p className='col-end-1 font-bold text-BaseColor uppercase '>MORE CAREERS</p>
-          <span className='block col-end-4 w-2.5 h-2.5 border-t-2 border-r-2 border-BaseColor border-solid rotate-45'></span>
-        </button>
+        <Link href='/company'>
+          <a className='absolute  right-12  bottom-10 z-20'>
+            <div
+              className='flex justify-center items-center '
+              onMouseEnter={() => {
+                setClasss('animate-buttonUp');
+                setText('animate-textLeftUp');
+              }}
+              onMouseLeave={() => {
+                setClasss('animate-buttonDown');
+                setText('animate-textLeftDown');
+              }}
+            >
+              <button
+                type='button'
+                className={`grid justify-center  items-center   px-7 mr-5 w-14 h-14  bg-red rounded-full transition-all duration-700  ${classs}`}
+              >
+                <span className='block w-2 h-2 border-t-2 border-r-2 border-white border-solid rotate-45'></span>
+              </button>
+              <p className={`relative font-bold text-white uppercase ${text}`}>More Careers</p>
+            </div>
+          </a>
+        </Link>
       </div>
-      <div className='grid relative bottom-48 grid-cols-2 items-end'>
-        <div className='z-20 pt-14 pr-14 mt-16 w-CareersText bg-white rounded-80 '>
+      <div className='grid relative bottom-44 grid-cols-2 items-end'>
+        <div
+          ref={iconRef}
+          className={`z-20 pt-14 pr-14 mt-16 w-CareersText bg-white opacity-0 ${textWhite}`}
+        >
           <h3 className='mb-4 text-3xl font-bold leading-relaxed'>
             この文章はダミーです。文 字の大きさ、量
           </h3>

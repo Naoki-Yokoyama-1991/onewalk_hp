@@ -1,10 +1,14 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import React, { FC } from 'react';
+import React, { FC, useRef } from 'react';
 import ImageObject from './Images';
+import useOffsetTop from './libs/useScroll';
 
 const Service: FC = () => {
   const router = useRouter();
+  const iconRef = useRef(null);
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
+  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ');
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -28,7 +32,10 @@ const Service: FC = () => {
     <section className='mt-40 w-full '>
       <h2 className='relative z-10 text-moSecond font-black leading-none'>SERVICE</h2>
       <div className='grid grid-cols-Service'>
-        <div className='z-20 py-14 pr-14 mt-16 w-ServiceText bg-white rounded-80 '>
+        <div
+          ref={iconRef}
+          className={`z-20 py-14 pr-14 mt-16 w-ServiceText bg-white opacity-0 ${textWhite}`}
+        >
           <h3 className='mb-4 text-3xl font-bold leading-relaxed'>
             この文章はダミーです。文 字の大きさ、量
           </h3>
@@ -52,11 +59,11 @@ const Service: FC = () => {
             </button>
           </div>
         </div>
-        <div className=' relative bottom-8 w-ServiceImage'>
+        <div className=' relative bottom-8 w-ServiceImage' ref={iconRef}>
           <Image
             src={ImageObject.ServiceImgs[0].src}
             alt={ImageObject.ServiceImgs[0].alt}
-            className={ImageObject.ServiceImgs[0].className}
+            className={`opacity-0   ${scrollStyle}`}
             priority={true}
             objectFit='cover'
           />
