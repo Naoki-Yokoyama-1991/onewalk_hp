@@ -1,8 +1,13 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 
 const News: FC = () => {
   const router = useRouter();
+
+  //classNameButton
+  const [classs, setClasss] = useState<string>('');
+  const [text, setText] = useState<string>('');
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -28,15 +33,30 @@ const News: FC = () => {
   return (
     <section className='mt-64 w-full '>
       <h1 className='relative z-10  text-moSecond  font-black leading-none text-center'>NEWS</h1>
-      <div className='grid grid-rows-3 m-auto mt-12 w-NewsText'>{items}</div>
-      <button
-        type='button'
-        className='grid grid-cols-2 items-center px-7 mx-auto mt-20 w-56 h-16  rounded-full border-2 border-BaseColor border-solid'
-        onClick={handleClick}
-      >
-        <p className='col-end-1 font-bold text-BaseColor uppercase '>MORE NEWS</p>
-        <span className='block col-end-4 w-2.5 h-2.5 border-t-2 border-r-2 border-BaseColor border-solid rotate-45'></span>
-      </button>
+      <div className='grid grid-rows-3 m-auto mt-12 mb-24 w-NewsText'>{items}</div>
+      <Link href='/news'>
+        <a className=''>
+          <div
+            className='flex justify-center items-center '
+            onMouseEnter={() => {
+              setClasss('animate-buttonUp');
+              setText('animate-textLeftUp');
+            }}
+            onMouseLeave={() => {
+              setClasss('animate-buttonDown');
+              setText('animate-textLeftDown');
+            }}
+          >
+            <button
+              type='button'
+              className={`grid justify-center  items-center   px-7 mr-5 w-14 h-14  bg-red rounded-full transition-all duration-700  ${classs}`}
+            >
+              <span className='block w-2 h-2 border-t-2 border-r-2 border-white border-solid rotate-45'></span>
+            </button>
+            <p className={`relative font-bold uppercase ${text}`}>More News</p>
+          </div>
+        </a>
+      </Link>
     </section>
   );
 };

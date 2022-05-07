@@ -10,8 +10,8 @@ export const HeaderNav: FC = () => {
   const [value, setValue] = useState<string>('');
   return (
     <>
-      <nav className=' flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
-        <div className='z-20'>
+      <nav className='flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
+        <div className='z-20 hover:transition-all duration-300 hover:duration-300 hover:scale-110 '>
           <Link href='/'>
             <a className='inline-flex items-center'>
               <Image

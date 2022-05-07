@@ -35,57 +35,70 @@ MenuLink.displayName = 'Forward';
 
 export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
   const [isShown, setIsShown] = useState<boolean>(false);
+  const [down, setDown] = useState<string>('');
   const ref = useRef<HTMLAnchorElement>(null);
 
   return (
     <Menu>
       <>
-        <Menu.Button
+        <div
+          className='mr-10'
           onMouseEnter={() => {
-            setValue('w-full h-screen bg-black opacity-30');
-            setIsShown(true);
+            setTimeout(() => {
+              setIsShown(true);
+              setDown('animate-navIn');
+              setValue('relative -z-30 w-full h-screen duration-1000 bg-black opacity-10');
+            }, 100);
           }}
           onMouseLeave={() => {
-            setValue('');
-            setIsShown(false);
+            setDown('animate-navOut');
+            setValue('relative -z-50 w-full h-screen duration-200 bg-black opacity-0');
+            setTimeout(() => {
+              setIsShown(false);
+              setValue('');
+            }, 100);
           }}
         >
-          <Link href={item.path}>
-            <a className='mr-10 font-semibold  uppercase hover:opacity-60'>{item.title}</a>
-          </Link>
-        </Menu.Button>
-        <Transition show={isShown}>
-          <Menu.Items
-            as='div'
-            className='grid absolute top-62 left-0 z-10 w-full'
-            onMouseEnter={() => {
-              setValue('w-full h-screen bg-black opacity-30');
-              setIsShown(true);
-            }}
-            onMouseLeave={() => {
-              setValue('');
-              setIsShown(false);
-            }}
-          >
-            <div className='w-full h-10  bg-white '></div>
-            <ul className='flex justify-center items-center h-28 bg-gray_pale'>
-              {item.suvNav.map((item, index) => {
-                return (
-                  <Menu.Item key={index} as='li' className='mx-10 font-semibold  hover:opacity-60'>
-                    {isShown && (
-                      <MenuLink href={item.path} ref={ref}>
-                        <p className='flex items-center'>
-                          <span className='inline-block col-end-4 mr-4 w-2 h-2  border-t-2 border-r-2 border-orange border-solid rotate-45'></span>
-                          <span className=''>{item.title}</span>
-                        </p>
-                      </MenuLink>
-                    )}
-                  </Menu.Item>
-                );
-              })}
-            </ul>
-          </Menu.Items>
-        </Transition>
+          <Menu.Button>
+            <Link href={item.path}>
+              <a className=' inline-block relative after:absolute after:-bottom-1 after:left-0 z-30 after:w-full after:h-small font-semibold no-underline uppercase after:content-[""]   after:bg-orange after:duration-300   after:scale-y-100 after:scale-x-0 hover:after:scale-x-100 after:origin-top-left'>
+                {item.title}
+              </a>
+            </Link>
+          </Menu.Button>
+          <Transition show={isShown}>
+            <Menu.Items as='div' className='grid absolute top-62 left-0  w-full'>
+              <div className='w-full h-9  bg-white'></div>
+              <ul
+                className={`flex justify-center items-center h-90 bg-gray_pale drop-shadow-xl rounded-b-md ${down}`}
+              >
+                <Link href={item.path}>
+                  <a className='pr-8 mr-4 h-8 text-xl font-semibold leading-8 border-r-1 border-gray-700 border-solid '>
+                    <span className='inline-block relative after:absolute after:-bottom-1 after:left-0  after:w-full after:h-small font-semibold no-underline uppercase after:content-[""]  after:bg-orange after:duration-300  after:scale-y-100 after:scale-x-0 hover:after:scale-x-100 after:origin-top-left'>
+                      {item.title}
+                    </span>
+                  </a>
+                </Link>
+
+                {item.suvNav.map((items, index) => {
+                  return (
+                    <Menu.Item key={index} as='li' className='mx-5  font-semibold '>
+                      {isShown && (
+                        <MenuLink href={items.path} ref={ref}>
+                          <p className='flex  items-center'>
+                            <span className='inline-block relative after:absolute after:-bottom-1 after:left-0  after:w-full after:h-small font-semibold no-underline uppercase after:content-[""]  after:bg-orange after:duration-300  after:scale-y-100 after:scale-x-0 hover:after:scale-x-100 after:origin-top-left'>
+                              {items.title}
+                            </span>
+                          </p>
+                        </MenuLink>
+                      )}
+                    </Menu.Item>
+                  );
+                })}
+              </ul>
+            </Menu.Items>
+          </Transition>
+        </div>
       </>
     </Menu>
   );
