@@ -7,18 +7,21 @@ module.exports = {
       width: {
         whoitem: '33rem',
         VisionText: '33rem',
-        ServiceImage: '52rem',
-        ServiceText: '25rem',
+        ServiceImage: '40rem',
+        ServiceText: '22rem',
         NewsText: '50rem',
         CareersImage: '63rem',
         CareersText: '25rem',
+        CareersRight: '36rem',
+        ButtonLink: '13.4rem',
         1.5: '1.5px',
       },
       height: {
         small: '2px',
         whoItem: '600px',
         visionItem: '23rem',
-        90: '110px',
+        serviceImage: '40rem',
+        90: '90px',
       },
       maxWidth: {
         1080: '67.5rem',
@@ -36,9 +39,11 @@ module.exports = {
       textColor: {
         BaseColor: '#222222',
       },
+      lineHeight: {},
       fontSize: {
-        most: '8.75rem',
-        moSecond: '7.75rem',
+        most: '8.5rem',
+        moSecond: '7rem',
+        Third: '4.5rem',
       },
       fontFamily: {
         base: ['Lato', 'Noto Sans JP'],
@@ -56,6 +61,7 @@ module.exports = {
         110: '9rem',
         96: '8rem',
         80: '5rem',
+        48: '3rem',
         20: '2rem',
       },
       spacing: {
@@ -65,7 +71,9 @@ module.exports = {
         Top: 'minmax(0,1fr) 5rem',
         Who: 'minmax(0,1fr) 33rem',
         Vision: '33.75rem minmax(0,1fr) ',
-        Service: 'minmax(0,1fr) 52rem',
+        Service: 'minmax(0,1fr) 42rem',
+        News: 'minmax(0,1fr) 44rem',
+        Careers: 'minmax(0,1fr) 42rem',
       },
       scale: {
         1.15: '1.15',
@@ -74,6 +82,9 @@ module.exports = {
 
       inset: {
         62: '58px',
+        110: '65px',
+        smallTitle: '40px',
+        coTitle: '50px',
       },
       transform: {},
       zIndex: {},
@@ -89,7 +100,7 @@ module.exports = {
           '100%': { bottom: '-62px', opacity: '0' },
         },
         navIn: {
-          '0%': { transform: 'translateY(-80px)', zIndex: -10, opacity: '0' },
+          '0%': { transform: 'translateY(-15%)', zIndex: -10, opacity: '0' },
           '100%': { transform: 'translateY(0)', zIndex: -10, opacity: '1' },
         },
         navOut: {
@@ -105,12 +116,16 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateX(0)', borderRadius: '80px' },
         },
         imageGray: {
-          '0%': { opacity: '0', transform: 'scale(0, 1)', borderRadius: '0px' },
-          '100%': { opacity: '1', transform: 'scale(1, 1)', borderRadius: '100px' },
+          '0%': { opacity: '0', transform: 'translateX(-30%)', borderRadius: '0px' },
+          '100%': { opacity: '1', transform: 'translateX(0)', borderRadius: '100px' },
+        },
+        imageSkin: {
+          '0%': { opacity: '0', transform: 'translateX(30%)', borderRadius: '0px' },
+          '100%': { opacity: '1', transform: 'translateX(0)', borderRadius: '100px' },
         },
         textWhite: {
-          '0%': { opacity: '0', transform: 'translateX(-15%)', borderRadius: '0px' },
-          '100%': { opacity: '1', transform: 'translateX(0)', borderRadius: '100px' },
+          '0%': { opacity: '0', transform: 'translateX(-15%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         buttonUp: {
           '0%': { transform: 'scale(1)' },
@@ -132,12 +147,13 @@ module.exports = {
       animation: {
         wiggle: 'wiggle 10s linear 0s 1 normal both',
         circlemove: 'circlemove 2s ease-in-out infinite',
-        navIn: 'navIn 0.1s ease-out',
+        navIn: 'navIn 0.15s ease-out',
         navOut: 'navOut 0.15s linear forwards',
         leftUnder: 'leftUnder 0.3s ',
-        imageMove: 'imageMove ease-out 0.3s 0.5s forwards',
+        imageMove: 'imageMove ease-out 0.3s 0.3s forwards',
         imageGray: 'imageGray ease-out 0.3s  forwards',
-        textWhite: 'textWhite ease-out 0.3s 0.8s  forwards',
+        imageSkin: 'imageGray ease-out 0.3s  forwards',
+        textWhite: 'textWhite ease-out 0.3s 0.6s  forwards',
         buttonUp: 'buttonUp linear 0.2s forwards',
         buttonDown: 'buttonDown linear 0.2s forwards',
         textDown: 'textDown linear 0.2s forwards',

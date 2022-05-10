@@ -17,6 +17,13 @@ declare module 'types' {
     alt: string;
     className: string;
   }
+  export interface ServiceDetail {
+    src: StaticImageData;
+    alt: string;
+    title: string;
+    text: string;
+    className: string;
+  }
 
   export interface ImageSns {
     src: StaticImageData;

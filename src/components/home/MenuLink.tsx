@@ -48,7 +48,7 @@ export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
               setIsShown(true);
               setDown('animate-navIn');
               setValue('relative -z-30 w-full h-screen duration-1000 bg-black opacity-10');
-            }, 100);
+            }, 50);
           }}
           onMouseLeave={() => {
             setDown('animate-navOut');
@@ -70,7 +70,7 @@ export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
             <Menu.Items as='div' className='grid absolute top-62 left-0  w-full'>
               <div className='w-full h-9  bg-white'></div>
               <ul
-                className={`flex justify-center items-center h-90 bg-gray_pale drop-shadow-xl rounded-b-md ${down}`}
+                className={`flex justify-center items-center h-90 bg-gray_pale drop-shadow-xl rounded-b-48 ${down}`}
               >
                 <Link href={item.path}>
                   <a className='pr-8 mr-4 h-8 text-xl font-semibold leading-8 border-r-1 border-gray-700 border-solid '>
