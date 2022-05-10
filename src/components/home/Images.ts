@@ -12,7 +12,7 @@ import Vision from './images/visionLeft.png';
 // WHO
 import Who from './images/whoRight.jpg';
 // Types
-import { ImageDetail } from 'types';
+import { ImageDetail, ServiceDetail } from 'types';
 
 // TOP画面
 const MainImages: ImageDetail[] = [
@@ -58,9 +58,32 @@ const VisionImgs: ImageDetail[] = [
 ];
 
 // SERVICE
-const ServiceImgs: ImageDetail[] = [
+const ServiceImgs: ServiceDetail[] = [
   {
     src: Service,
+    title: 'この文章はダミーです。文 字の大きさ',
+    text: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミーです。',
+    alt: '',
+    className: 'rounded-80',
+  },
+  {
+    src: Main_2,
+    title: 'この文章はダミーです。文 字の大きさ',
+    text: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミーです。',
+    alt: '',
+    className: 'rounded-80',
+  },
+  {
+    src: Main_3,
+    title: 'この文章はダミーです。文 字の大きさ',
+    text: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミーです。',
+    alt: '',
+    className: 'rounded-80',
+  },
+  {
+    src: Main_4,
+    title: 'この文章はダミーです。文 字の大きさ',
+    text: 'この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミーです。',
     alt: '',
     className: 'rounded-80',
   },

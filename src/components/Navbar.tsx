@@ -16,8 +16,8 @@ export const HeaderNav: FC = () => {
             <a className='inline-flex items-center'>
               <Image
                 src={ImageObject.NavImages[0].src}
-                width={26}
-                height={26}
+                width={30}
+                height={30}
                 objectFit='contain'
                 alt={ImageObject.NavImages[0].alt}
               />

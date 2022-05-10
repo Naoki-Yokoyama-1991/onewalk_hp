@@ -9,12 +9,14 @@ const useOffsetTop = (ref?: React.RefObject<HTMLElement>, anime?: string) => {
     );
   };
 
-  const [pageOffset, setPageOffset] = useState<number>();
+  const [viewportOffsetTop, setViewportOffsetTop] = useState<number>();
+  const [pageOffset, setPageOffset] = useState<number | undefined>(undefined);
   const [isTop, setIsTop] = useState<string>('');
 
   const handler = useCallback(() => {
     if (!ref?.current) return;
     const clientRect = ref.current.getBoundingClientRect();
+    setViewportOffsetTop(clientRect.top);
     const newPageOffset = clientRect.top + window.pageYOffset;
     if (newPageOffset !== pageOffset) setPageOffset(newPageOffset);
 
@@ -27,11 +29,11 @@ const useOffsetTop = (ref?: React.RefObject<HTMLElement>, anime?: string) => {
   useEffect(() => {
     document.addEventListener('scroll', handler);
     return (): void => document.removeEventListener('scroll', handler);
-  }, [handler]);
+  }, [ref, handler]);
 
   const scrollStyle: string = isTop;
 
-  return scrollStyle;
+  return { scrollStyle, viewportOffsetTop, pageOffset };
 };
 
 export default useOffsetTop;

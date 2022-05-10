@@ -1,13 +1,29 @@
 import Image from 'next/image';
-import React, { FC, useRef } from 'react';
+import React, { FC, useRef, useMemo } from 'react';
 import ImageObject from './Images';
 import useOffsetTop from './libs/useScroll';
 
+//text move
+const maxSize = 350;
+const minSize = 70;
+
 const Vision: FC = () => {
   const iconRef = useRef(null);
+
+  // slide
   const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
-  const backGray = useOffsetTop(iconRef, 'animate-imageGray origin-top-right');
+  const backGray = useOffsetTop(iconRef, 'animate-imageSkin origin-top-right');
   const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ');
+
+  const { pageOffset, viewportOffsetTop } = useOffsetTop(iconRef);
+
+  // 要素の位置をもとにサイズを計算
+  const iconSize = useMemo(() => {
+    if (pageOffset === undefined || viewportOffsetTop === undefined) return maxSize;
+    const size = (viewportOffsetTop / pageOffset) * maxSize;
+    if (size <= minSize) return minSize;
+    return size.toFixed(1);
+  }, [pageOffset, viewportOffsetTop]);
 
   return (
     <section className='mt-72 w-full '>
@@ -15,27 +31,36 @@ const Vision: FC = () => {
         <div className='relative' ref={iconRef}>
           <div
             ref={iconRef}
-            className={`absolute -top-14 left-20 -z-10 w-whoitem h-visionItem  bg-gray_pale opacity-0 ${backGray}`}
+            className={`absolute -top-14 left-20 -z-10 w-whoitem h-visionItem  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
           ></div>
           <Image
             src={ImageObject.VisionImgs[0].src}
             alt={ImageObject.VisionImgs[0].alt}
-            className={`opacity-0 ${scrollStyle}`}
+            className={`opacity-0 ${scrollStyle.scrollStyle}`}
             priority={true}
             objectFit='cover'
           />
         </div>
-        <div className=''>
-          <h2 className='mt-12 mb-10 text-moSecond font-black  leading-none text-right'>VISION</h2>
+
+        <div>
+          <h2
+            ref={iconRef}
+            style={{
+              transform: `translateY(-${iconSize}px)`,
+            }}
+            className='relative top-110 mt-8 mb-4 text-moSecond font-black  leading-none text-right'
+          >
+            VISION<span className='block  text-4xl font-bold text-red'>2022</span>
+          </h2>
           <div
             ref={iconRef}
-            className={`relative right-12 p-14 m-0 w-VisionText bg-white  opacity-0 ${textWhite}`}
+            className={`relative right-12 p-14 m-0 w-VisionText bg-white rounded-80  opacity-0 ${textWhite.scrollStyle}`}
           >
             <h3 className='mb-4 text-4xl font-bold leading-relaxed'>
               この文章はダミーです。文 字の大きさ、量、
             </h3>
             <p className='mb-16 leading-8'>
-              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入れてこの
+              この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入
             </p>
           </div>
         </div>
