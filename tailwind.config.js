@@ -25,6 +25,7 @@ module.exports = {
       },
       maxWidth: {
         1080: '67.5rem',
+        vw: '100vw',
       },
       colors: {
         orange: '#E8614F',
@@ -83,6 +84,7 @@ module.exports = {
       inset: {
         62: '58px',
         110: '65px',
+        90: '102px',
         smallTitle: '40px',
         coTitle: '50px',
       },
@@ -143,6 +145,10 @@ module.exports = {
           '0%': { left: '7px' },
           '100%': { left: '0px' },
         },
+        ArrowRight: {
+          '0%': { opacity: '0', left: '0px' },
+          '100%': { opacity: '1', left: '16px' },
+        },
       },
       animation: {
         wiggle: 'wiggle 10s linear 0s 1 normal both',
@@ -159,6 +165,7 @@ module.exports = {
         textDown: 'textDown linear 0.2s forwards',
         textLeftUp: 'textLeftUp linear 0.2s forwards',
         textLeftDown: 'textLeftDown linear 0.2s forwards',
+        ArrowRight: 'ArrowRight ease-out 0.4s forwards',
       },
     },
   },

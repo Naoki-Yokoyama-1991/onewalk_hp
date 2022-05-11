@@ -23,9 +23,9 @@ const ButtonLink: FC = () => {
           >
             <button
               type='button'
-              className={`grid justify-center items-center px-7 mr-5 w-14 h-14  bg-red rounded-full transition-all duration-700  ${classs}`}
+              className={`grid justify-center items-center px-7 mr-5 w-14 h-14  bg-red rounded-full  transition-all duration-700  ${classs}`}
             >
-              <span className='block w-2 h-2 border-t-2 border-r-2 border-white border-solid rotate-45'></span>
+              <span className='block w-2.5 h-2.5 rounded-sm border-t-3 border-r-3 border-white border-solid rotate-45'></span>
             </button>
             <p className={`relative font-bold uppercase ${text}`}>More News</p>
           </div>

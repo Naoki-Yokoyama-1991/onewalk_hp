@@ -39,7 +39,7 @@ const Careers: FC = () => {
           className={`pt-14 mt-16 pr-12 bg-white rounded-80 opacity-0 ${textWhite.scrollStyle}`}
         >
           <h2
-            className='relative top-coTitle mb-12'
+            className='relative top-coTitle mb-10'
             ref={iconRef}
             style={{
               transform: `translateY(-${iconSize}px)`,

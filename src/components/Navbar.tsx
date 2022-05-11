@@ -4,6 +4,7 @@ import { FC, useState } from 'react';
 import ImageObject from '../data/Images';
 import { footerRoutes, menuRoutes } from '../data/routes';
 import { HeadNavLink, FootNavLink } from './home/MenuLink';
+import Hamburger from './home/libs/Hamburger';
 
 //Navigation
 export const HeaderNav: FC = () => {
@@ -29,7 +30,8 @@ export const HeaderNav: FC = () => {
           {menuRoutes.map((item, index) => {
             return <HeadNavLink key={index} item={item} setValue={setValue} />;
           })}
-          <svg
+          <Hamburger />
+          {/* <svg
             className='inline-block ml-9 w-10'
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
@@ -38,7 +40,7 @@ export const HeaderNav: FC = () => {
             aria-hidden='true'
           >
             <path strokeLinecap='round' strokeWidth='1.5' d='M4 2 h34 M4 9 h34 M4 16 h20' />
-          </svg>
+          </svg> */}
         </div>
       </nav>
       <div className={value}></div>
