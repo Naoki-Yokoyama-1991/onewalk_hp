@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 import ImageObject from '../data/Images';
 import { footerRoutes, menuRoutes } from '../data/routes';
 import { HeadNavLink, FootNavLink } from './home/MenuLink';
-import Hamburger from './home/libs/Hamburger';
 
 //Navigation
 export const HeaderNav: FC = () => {
@@ -17,30 +16,23 @@ export const HeaderNav: FC = () => {
             <a className='inline-flex items-center'>
               <Image
                 src={ImageObject.NavImages[0].src}
-                width={30}
-                height={30}
+                width={32}
+                height={32}
                 objectFit='contain'
                 alt={ImageObject.NavImages[0].alt}
               />
-              <span className='ml-2 text-xl font-semibold uppercase'>ONEWALK</span>
+              <span className='ml-2 text-2xl font-semibold uppercase'>ONEWALK</span>
             </a>
           </Link>
         </div>
         <div className='flex items-center '>
           {menuRoutes.map((item, index) => {
-            return <HeadNavLink key={index} item={item} setValue={setValue} />;
+            return (
+              <div key={index}>
+                <HeadNavLink item={item} setValue={setValue} />
+              </div>
+            );
           })}
-          <Hamburger />
-          {/* <svg
-            className='inline-block ml-9 w-10'
-            xmlns='http://www.w3.org/2000/svg'
-            fill='none'
-            viewBox='0 0 36 22'
-            stroke='currentColor'
-            aria-hidden='true'
-          >
-            <path strokeLinecap='round' strokeWidth='1.5' d='M4 2 h34 M4 9 h34 M4 16 h20' />
-          </svg> */}
         </div>
       </nav>
       <div className={value}></div>

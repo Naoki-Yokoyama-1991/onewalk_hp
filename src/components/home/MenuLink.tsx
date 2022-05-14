@@ -44,19 +44,12 @@ export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
         <div
           className='mr-10'
           onMouseEnter={() => {
-            setTimeout(() => {
-              setIsShown(true);
-              setDown('animate-navIn');
-              setValue('relative -z-30 w-full h-screen duration-1000 bg-black opacity-10');
-            }, 50);
+            setIsShown(true);
+            setDown('animate-navIn');
           }}
           onMouseLeave={() => {
             setDown('animate-navOut');
-            setValue('relative -z-50 w-full h-screen duration-200 bg-black opacity-0');
-            setTimeout(() => {
-              setIsShown(false);
-              setValue('');
-            }, 100);
+            setIsShown(false);
           }}
         >
           <Menu.Button>
