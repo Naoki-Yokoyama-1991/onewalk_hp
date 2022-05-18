@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import React, { FC, useState, useRef, Dispatch, SetStateAction } from 'react';
+import React, { FC, useState, useRef } from 'react';
 import { ReactNode } from 'react';
 import { menuDropNav } from '../../data/routes';
 
@@ -11,7 +11,6 @@ type Props = {
 
 interface SubNav {
   item: menuDropNav;
-  setValue: Dispatch<SetStateAction<string>>;
 }
 type Link = {
   children: ReactNode;
@@ -33,7 +32,7 @@ const MenuLink: FC<Link> = React.forwardRef(
 
 MenuLink.displayName = 'Forward';
 
-export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
+export const HeadNavLink: FC<SubNav> = ({ item }) => {
   const [isShown, setIsShown] = useState<boolean>(false);
   const [down, setDown] = useState<string>('');
   const ref = useRef<HTMLAnchorElement>(null);
@@ -44,19 +43,14 @@ export const HeadNavLink: FC<SubNav> = ({ item, setValue }) => {
         <div
           className='mr-10'
           onMouseEnter={() => {
-            setTimeout(() => {
-              setIsShown(true);
-              setDown('animate-navIn');
-              setValue('relative -z-30 w-full h-screen duration-1000 bg-black opacity-10');
-            }, 50);
+            setIsShown(true);
+            setDown('animate-navIn');
           }}
           onMouseLeave={() => {
             setDown('animate-navOut');
-            setValue('relative -z-50 w-full h-screen duration-200 bg-black opacity-0');
             setTimeout(() => {
               setIsShown(false);
-              setValue('');
-            }, 100);
+            }, 200);
           }}
         >
           <Menu.Button>

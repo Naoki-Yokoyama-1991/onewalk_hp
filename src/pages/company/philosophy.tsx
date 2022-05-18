@@ -1,13 +1,13 @@
 import Head from 'next/head';
 
-const Company = () => {
+const Philosophy = () => {
   return (
     <div>
       <Head>
-        <title>Company</title>
+        <title>Philosophy</title>
       </Head>
     </div>
   );
 };
 
-export default Company;
+export default Philosophy;
