@@ -1,13 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import ImageObject from '../data/Images';
 import { footerRoutes, menuRoutes } from '../data/routes';
 import { HeadNavLink, FootNavLink } from './home/MenuLink';
 
 //Navigation
 export const HeaderNav: FC = () => {
-  const [value, setValue] = useState<string>('');
   return (
     <>
       <nav className='flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
@@ -29,13 +28,12 @@ export const HeaderNav: FC = () => {
           {menuRoutes.map((item, index) => {
             return (
               <div key={index}>
-                <HeadNavLink item={item} setValue={setValue} />
+                <HeadNavLink item={item} />
               </div>
             );
           })}
         </div>
       </nav>
-      <div className={value}></div>
     </>
   );
 };

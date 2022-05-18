@@ -3,8 +3,10 @@ import React from 'react';
 const Top: React.FC = () => {
   return (
     <div className='grid items-center h-screen'>
-      <h1 className='text-most font-black text-left'>COMPANY</h1>
-      <h3>ONEWALKとは</h3>
+      <div className='relative -top-12'>
+        <h1 className='text-moSecondTitle font-black leading-tight text-left '>COMPANY</h1>
+        <h3 className='ml-8 text-3xl font-black'>ONEWALKとは</h3>
+      </div>
     </div>
   );
 };

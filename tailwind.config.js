@@ -16,14 +16,18 @@ module.exports = {
         ButtonLink: '13.4rem',
         1.5: '1.5px',
         menu: '36px',
+        CompanyTop: '1240px',
+        CompanyText: '860px',
       },
       height: {
         small: '2px',
         38: '38px',
         whoItem: '600px',
+        coItem: '570px',
         visionItem: '23rem',
         serviceImage: '40rem',
         90: '90px',
+        1.5: '1.5px',
         1.5: '1.5px',
       },
       maxWidth: {
@@ -32,6 +36,7 @@ module.exports = {
       },
       margin: {
         3: '3px',
+        420: '420px',
       },
       colors: {
         orange: '#E8614F',
@@ -50,7 +55,9 @@ module.exports = {
       fontSize: {
         most: '8.5rem',
         moSecond: '7rem',
+        moSecondTitle: '6.7rem',
         Third: '4.5rem',
+        menu: '44px',
       },
       fontFamily: {
         base: ['Lato', 'Noto Sans JP'],
@@ -64,6 +71,8 @@ module.exports = {
         3: '3px',
       },
       borderRadius: {
+        200: '220px',
+        180: '180px',
         144: '9rem',
         110: '9rem',
         96: '8rem',
@@ -169,6 +178,14 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateX(0)' },
           '100%': { opacity: '1', transform: 'translateX(-100%)' },
         },
+        imageTopMove: {
+          '0%': { opacity: '0', transform: 'translateX(15%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        imageTopGray: {
+          '0%': { opacity: '0', transform: 'translateX(30%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         wiggle: 'wiggle 10s linear 0s 1 normal both',
@@ -187,6 +204,8 @@ module.exports = {
         textLeftDown: 'textLeftDown linear 0.2s forwards',
         ArrowRight: 'ArrowRight ease-out 0.4s forwards',
         Back: 'Back  0.3s ',
+        imageTopMove: 'imageTopMove ease-out 0.4s 0.3s forwards',
+        imageTopGray: 'imageTopGray ease-out 0.4s  forwards',
       },
     },
   },
