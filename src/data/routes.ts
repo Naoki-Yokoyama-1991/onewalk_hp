@@ -1,14 +1,16 @@
+// Header menu
 interface HeadNavs {
   name: string;
   path: string;
 }
+
 export const headerRoutes: HeadNavs[] = [
   { name: 'COMPANY', path: '/company' },
-  { name: 'SERVICE', path: '/service' },
   { name: 'NEWS', path: '/news' },
-  { name: 'CAREERS', path: '/careers' },
+  { name: 'CONTACT', path: '/contact' },
 ];
 
+// Footer menu
 interface FooterNavs {
   name: string;
   path: string;
@@ -17,36 +19,38 @@ interface FooterNavs {
 export const footerRoutes: FooterNavs[] = [
   { name: 'TOP', path: '/' },
   { name: 'COMPANY', path: '/company' },
-  { name: 'SERVICE', path: '/service' },
   { name: 'NEWS', path: '/news' },
-  { name: 'CAREERS', path: '/careers' },
+  { name: 'CONTACT', path: '/contact' },
 ];
 
+// Header drop menu
 export interface menuDropNav {
   title: string;
   path: string;
-  suvNav: [
-    {
-      title: string;
-      path: string;
-    },
-    {
-      title: string;
-      path: string;
-    },
-    {
-      title: string;
-      path: string;
-    },
-    {
-      title: string;
-      path: string;
-    },
-    {
-      title: string;
-      path: string;
-    },
-  ];
+  suvNav?:
+    | [
+        {
+          title: string;
+          path: string;
+        },
+        {
+          title: string;
+          path: string;
+        },
+        {
+          title: string;
+          path: string;
+        },
+        {
+          title: string;
+          path: string;
+        },
+        {
+          title: string;
+          path: string;
+        },
+      ]
+    | undefined;
 }
 
 export const menuRoutes: menuDropNav[] = [
@@ -56,102 +60,32 @@ export const menuRoutes: menuDropNav[] = [
     suvNav: [
       {
         title: 'PHILOSOPHY',
-        path: '/philosophy',
+        path: '/company/philosophy',
       },
       {
         title: 'TOP MESSAGE',
-        path: '/message',
+        path: '/company/message',
       },
       {
         title: 'OUTLINE',
-        path: '/outline',
+        path: '/company/outline',
       },
       {
         title: 'EXECUTIVES',
-        path: '/executives',
+        path: '/company/executives',
       },
       {
         title: 'HISTORY',
-        path: '/history',
-      },
-    ],
-  },
-  {
-    title: 'SERVICE',
-    path: '/service',
-    suvNav: [
-      {
-        title: 'SERVICE',
-        path: '/service',
-      },
-      {
-        title: 'SERVICE',
-        path: '/service',
-      },
-      {
-        title: 'SERVICE',
-        path: '/service',
-      },
-      {
-        title: 'SERVICE',
-        path: '/service',
-      },
-      {
-        title: 'SERVICE',
-        path: '/service',
+        path: '/company/history',
       },
     ],
   },
   {
     title: 'NEWS',
     path: '/news',
-    suvNav: [
-      {
-        title: 'NEWS',
-        path: '/news',
-      },
-      {
-        title: 'NEWS',
-        path: '/news',
-      },
-      {
-        title: 'NEWS',
-        path: '/news',
-      },
-      {
-        title: 'NEWS',
-        path: '/news',
-      },
-      {
-        title: 'NEWS',
-        path: '/news',
-      },
-    ],
   },
   {
-    title: 'CAREERS',
-    path: '/careers',
-    suvNav: [
-      {
-        title: 'CAREERS',
-        path: '/careers',
-      },
-      {
-        title: 'CAREERS',
-        path: '/careers',
-      },
-      {
-        title: 'CAREERS',
-        path: '/careers',
-      },
-      {
-        title: 'CAREERS',
-        path: '/careers',
-      },
-      {
-        title: 'CAREERS',
-        path: '/careers',
-      },
-    ],
+    title: 'CONTACT',
+    path: '/contact',
   },
 ];

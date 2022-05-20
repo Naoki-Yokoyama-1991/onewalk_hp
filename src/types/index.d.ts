@@ -17,6 +17,7 @@ declare module 'types' {
     alt: string;
     className: string;
   }
+
   export interface ServiceDetail {
     src: StaticImageData;
     alt: string;
@@ -54,6 +55,33 @@ declare module 'types' {
       },
       {
         title: string;
+        path: string;
+      },
+    ];
+  }
+
+  export interface textDate {
+    title: string;
+    text: string;
+    suvNav: [
+      {
+        name: string;
+        path: string;
+      },
+      {
+        name: string;
+        path: string;
+      },
+      {
+        name: string;
+        path: string;
+      },
+      {
+        name: string;
+        path: string;
+      },
+      {
+        name: string;
         path: string;
       },
     ];

@@ -1,7 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Lead from '../../components/company/Lead';
-import Top from '../../components/company/Top';
+import Contents from '../../components/inc/Content';
+import Top from '../../components/inc/Top';
+import View from '../../data/Images';
+import Date from '../../data/data.json';
+import { subRoutes } from '../../data/topRoutes';
 
 const Company: NextPage = () => {
   return (
@@ -10,8 +13,8 @@ const Company: NextPage = () => {
         <title>Company</title>
       </Head>
       <main className='mx-auto max-w-1080'>
-        <Top />
-        <Lead />
+        <Top data={subRoutes} />
+        <Contents data={Date.data.company} sub={subRoutes} view={View.CompanyTop} />
       </main>
     </>
   );

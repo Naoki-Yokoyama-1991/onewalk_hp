@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { FC, useRef } from 'react';
 import Slider, { CustomArrowProps } from 'react-slick';
-import Images from '../Images';
+import Images from '../home/Images';
 import useOffsetTop from './useScroll';
 import { ServiceDetail } from 'types';
 
@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick-theme.css';
 const SliderItem: FC = () => {
   // slide
   const iconRef = useRef(null);
-  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove', 800);
 
   //Slider
   const sliderRef = useRef<Slider>(null);
@@ -35,7 +35,7 @@ const SliderItem: FC = () => {
     speed: 500,
     dots: true,
     fade: true,
-    appendDots: (dots: React.ReactNode) => (
+    appendDots: () => (
       <div style={{ position: 'relative', bottom: '62px' }}>
         <div className='flex mb-14'>
           <SlickArrowLeft onClick={handleClickSliderPrev} />

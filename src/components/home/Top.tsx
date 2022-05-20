@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React, { useRef } from 'react';
-
 import SwiperCore, { Pagination, Navigation, Autoplay, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Images from './Images';

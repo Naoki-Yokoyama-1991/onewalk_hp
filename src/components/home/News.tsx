@@ -1,13 +1,8 @@
-import { useRouter } from 'next/router';
-import React, { FC, useRef, useMemo, useState } from 'react';
-import ButtonLink from './libs/ButtonLink';
-import useOffsetTop from './libs/useScroll';
+import React, { FC, useRef, useMemo } from 'react';
+import ButtonLink from '../libs/ButtonLink';
+import useOffsetTop from '../libs/useScroll';
 
 const News: FC = () => {
-  const router = useRouter();
-  //ArowRight
-  const [arowItem, setAroeItem] = useState<string>('');
-
   //text move
   const maxSize = 500;
   const minSize = 30;
@@ -22,14 +17,6 @@ const News: FC = () => {
     if (size <= minSize) return minSize;
     return size.toFixed(1);
   }, [pageOffset, viewportOffsetTop]);
-
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    router.push('/news').catch((err) => {
-      //エラー処理
-      console.error(err);
-    });
-  };
 
   const items: JSX.Element[] = [];
   for (let i = 0; i < 5; i++) {

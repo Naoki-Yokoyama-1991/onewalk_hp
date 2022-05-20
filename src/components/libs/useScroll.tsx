@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-const useOffsetTop = (ref?: React.RefObject<HTMLElement>, anime?: string) => {
+const useOffsetTop = (ref?: React.RefObject<HTMLElement>, anime?: string, time?: number) => {
   const scrollTop = (): number => {
     return Math.max(
       window.pageYOffset,
@@ -21,10 +21,10 @@ const useOffsetTop = (ref?: React.RefObject<HTMLElement>, anime?: string) => {
     if (newPageOffset !== pageOffset) setPageOffset(newPageOffset);
 
     const position = scrollTop();
-    if (position >= newPageOffset - 800 && anime !== undefined) {
+    if (time !== undefined && position >= newPageOffset - time && anime !== undefined) {
       setIsTop(anime);
     }
-  }, [ref, pageOffset, anime]);
+  }, [ref, pageOffset, anime, time]);
 
   useEffect(() => {
     document.addEventListener('scroll', handler);

@@ -3,10 +3,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
 import Detail from '../../components/company/Message';
-import { OutlineTop } from '../../data/Images';
+import { MessageTop } from '../../data/Images';
 import Date from '../../data/data.json';
 
-const Outline: NextPage = () => {
+const Message: NextPage = () => {
   const lead = Date.data.company.message;
   return (
     <>
@@ -16,20 +16,20 @@ const Outline: NextPage = () => {
       <main className='mx-auto max-w-1080'>
         <div className='grid grid-rows-sub items-center py-24 h-screen '>
           <div className='mt-28'>
-            <h3 className='ml-1 text-xl font-medium text-red'>会社情報</h3>
-            <h1 className='text-Third font-black leading-tight text-left '>OUTLINE</h1>
+            <h3 className='ml-1 text-xl font-medium text-red'>代表メッセージ</h3>
+            <h1 className='text-Third font-black leading-tight text-left '>TOP MESSAGE</h1>
           </div>
-          <div className='absolute right-0 -bottom-outline  -z-20  mb-8 w-10/12 '>
+          <div className='absolute -bottom-32 left-0 -z-20  mb-8 w-11/12 '>
             <Image
-              src={OutlineTop.src}
-              alt={OutlineTop.alt}
+              src={MessageTop.src}
+              alt={MessageTop.alt}
               priority={true}
-              className='w-full rounded-tl-180'
+              className='w-full rounded-tr-180'
               objectFit='cover'
             />
           </div>
         </div>
-        <section className='py-36 my-72 mx-auto w-full bg-white rounded-80'>
+        <section className='mx-auto mt-56 mb-72  w-full '>
           <div className='mx-auto w-CompanyText '>
             <Detail data={lead} />
           </div>
@@ -38,4 +38,4 @@ const Outline: NextPage = () => {
     </>
   );
 };
-export default Outline;
+export default Message;

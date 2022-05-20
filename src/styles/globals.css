@@ -9,6 +9,10 @@
     @apply text-BaseColor text-base m-0 font-base tracking-wide;
   }
 
+  p {
+    @apply leading-loose;
+  }
+
   li {
     @apply list-none;
   }

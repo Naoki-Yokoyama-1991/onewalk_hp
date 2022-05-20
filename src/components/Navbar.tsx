@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 import ImageObject from '../data/Images';
 import { footerRoutes, menuRoutes } from '../data/routes';
-import { HeadNavLink, FootNavLink } from './home/MenuLink';
+import { HeadNavLink, FootNavLink } from './libs/MenuLink';
 
 //Navigation
 export const HeaderNav: FC = () => {
