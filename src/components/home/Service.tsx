@@ -1,6 +1,6 @@
 import React, { FC, useRef, useMemo } from 'react';
-import SliderItem from './libs/Slider';
-import useOffsetTop from './libs/useScroll';
+import SliderItem from '../libs/Slider';
+import useOffsetTop from '../libs/useScroll';
 
 const Service: FC = () => {
   //text move

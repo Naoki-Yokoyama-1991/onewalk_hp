@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React, { FC, useRef, useMemo } from 'react';
+import ButtonLink from '../libs/ButtonLink';
+import useOffsetTop from '../libs/useScroll';
 import ImageObject from './Images';
-import ButtonLink from './libs/ButtonLink';
-import useOffsetTop from './libs/useScroll';
 
 const Careers: FC = () => {
   //text move
@@ -10,8 +10,8 @@ const Careers: FC = () => {
   const minSize = 40;
 
   const iconRef = useRef(null);
-  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
-  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ');
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove', 800);
+  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ', 800);
 
   const { pageOffset, viewportOffsetTop } = useOffsetTop(iconRef);
   // 要素の位置をもとにサイズを計算

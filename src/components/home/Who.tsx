@@ -1,9 +1,8 @@
 import Image from 'next/image';
 import React, { FC, useRef, useMemo } from 'react';
+import ButtonLink from '../libs/ButtonLink';
+import useOffsetTop from '../libs/useScroll';
 import ImageObject from './Images';
-import ButtonLink from './libs/ButtonLink';
-
-import useOffsetTop from './libs/useScroll';
 
 const Top: FC = () => {
   //text move
@@ -11,8 +10,8 @@ const Top: FC = () => {
   const minSize = 50;
 
   const iconRef = useRef(null);
-  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
-  const backGray = useOffsetTop(iconRef, 'animate-imageGray origin-top-left');
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove', 800);
+  const backGray = useOffsetTop(iconRef, 'animate-imageGray origin-top-left', 800);
 
   const { pageOffset, viewportOffsetTop } = useOffsetTop(iconRef);
 

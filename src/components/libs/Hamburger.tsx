@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { FC, useState, ReactNode, useRef } from 'react';
-import ImageObject from '../../../data/Images';
-import { menuRoutes } from '../../../data/routes';
+import ImageObject from '../../data/Images';
+import { menuRoutes } from '../../data/routes';
 
 type Link = {
   children: ReactNode;
@@ -48,46 +48,52 @@ function MobileNav({
       >
         {isOpen && (
           <div className='mx-auto max-w-1080 '>
-            <Link href='/'>
-              <a className='inline-flex items-center mb-16 ml-4 hover:opacity-50 transition-all duration-300 ease'>
-                <Image
-                  src={ImageObject.whiteLogo[0].src}
-                  width={32}
-                  height={32}
-                  objectFit='contain'
-                  alt={ImageObject.whiteLogo[0].alt}
-                />
-                <span className='ml-2 text-2xl font-semibold text-white uppercase'>ONEWALK</span>
-              </a>
-            </Link>
-            <div className='grid row-span-4 gap-y-14'>
+            <div className='flex'>
+              <div className='pr-24 mr-8 border-r-1 border-zinc-700'>
+                <Link href='/'>
+                  <a className='flex items-center hover:opacity-50 transition-all duration-300 ease'>
+                    <Image
+                      src={ImageObject.whiteLogo[0].src}
+                      width={32}
+                      height={32}
+                      objectFit='contain'
+                      alt={ImageObject.whiteLogo[0].alt}
+                    />
+                    <span className='ml-4 text-2xl font-semibold text-white uppercase'>
+                      ONEWALK
+                    </span>
+                  </a>
+                </Link>
+              </div>
+
               {menuRoutes.map((item, index) => {
                 return (
-                  <div key={index}>
+                  <div key={index} className='ml-16'>
                     <MenuLink href={item.path} ref={ref}>
                       <h3
-                        className='inline-block mb-4 ml-4 text-4xl font-semibold tracking-wide text-white hover:opacity-50 transition-all duration-300 ease'
+                        className='inline-block mb-7 text-3xl font-semibold tracking-wide text-white hover:opacity-50 transition-all duration-300 ease'
                         onClick={() => handleClick}
                       >
                         {item.title}
                       </h3>
                     </MenuLink>
-                    <div className='flex'>
-                      {item.suvNav.map((items, index) => {
-                        return (
-                          <div key={index} className='mx-4'>
-                            <MenuLink href={items.path} key={index} ref={ref}>
-                              <span
-                                className='flex justify-start items-center  text-lg  text-white hover:opacity-50 transition-all duration-300 ease '
-                                onClick={() => handleClick}
-                              >
-                                <span className='mr-2 w-2.5 h-2.5 rounded-sm border-t-3 border-r-3 border-white border-solid rotate-45 '></span>
-                                {items.title}
-                              </span>
-                            </MenuLink>
-                          </div>
-                        );
-                      })}
+                    <div className=''>
+                      {item.suvNav !== undefined &&
+                        item.suvNav.map((items, index) => {
+                          return (
+                            <div key={index} className=''>
+                              <MenuLink href={items.path} key={index} ref={ref}>
+                                <span
+                                  className='flex justify-start items-center mt-4  text-white hover:opacity-50 transition-all duration-300 ease '
+                                  onClick={() => handleClick}
+                                >
+                                  <span className='mr-3 w-2 h-2 rounded-sm border-t-2 border-r-2 border-white border-solid rotate-45 '></span>
+                                  {items.title}
+                                </span>
+                              </MenuLink>
+                            </div>
+                          );
+                        })}
                     </div>
                   </div>
                 );
@@ -103,7 +109,7 @@ function MobileNav({
 const Hamburger: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const genericHamburgerLine = `h-0.5 my-3 rounded-full transition-all ease duration-300`;
+  const genericHamburgerLine = `h-0.5 my-ham rounded-full transition-all ease duration-300`;
 
   return (
     <>

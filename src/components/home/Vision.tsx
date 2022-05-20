@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React, { FC, useRef, useMemo } from 'react';
+import useOffsetTop from '../libs/useScroll';
 import ImageObject from './Images';
-import useOffsetTop from './libs/useScroll';
 
 //text move
 const maxSize = 350;
@@ -11,9 +11,9 @@ const Vision: FC = () => {
   const iconRef = useRef(null);
 
   // slide
-  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove');
-  const backGray = useOffsetTop(iconRef, 'animate-imageSkin origin-top-right');
-  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ');
+  const scrollStyle = useOffsetTop(iconRef, 'animate-imageMove', 800);
+  const backGray = useOffsetTop(iconRef, 'animate-imageSkin origin-top-right', 800);
+  const textWhite = useOffsetTop(iconRef, 'animate-textWhite origin-top-left ', 800);
 
   const { pageOffset, viewportOffsetTop } = useOffsetTop(iconRef);
 

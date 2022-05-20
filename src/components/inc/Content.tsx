@@ -1,10 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { ReactNode, FC, useRef } from 'react';
-import Date from '../data/data.json';
-import { CompanyLink } from '../data/routes';
-import Images from './Images';
-import useOffsetTop from './libs/useScroll';
+import useOffsetTop from '../libs/useScroll';
+import { textDate, ImageDetail } from 'types';
 
 type Link = {
   children: ReactNode;
@@ -12,7 +10,11 @@ type Link = {
   ref: React.Ref<HTMLAnchorElement>;
 };
 
-const LeadText = Date.data.company;
+type Date = {
+  data: { title: string; text: string };
+  sub: textDate;
+  view: ImageDetail;
+};
 
 const MenuLink: FC<Link> = React.forwardRef(
   ({ href, children, ...rest }, ref: React.Ref<HTMLAnchorElement>) => {
@@ -28,38 +30,47 @@ const MenuLink: FC<Link> = React.forwardRef(
 
 MenuLink.displayName = 'Forward';
 
-const Lead: FC = () => {
+const Contents: FC<Date> = (props) => {
+  //data add
+  const lead = props.data;
+  const company = props.sub;
+  const view = props.view;
+
+  // scroll
   const iconRef = useRef(null);
   const ref = useRef<HTMLAnchorElement>(null);
-  const backGray = useOffsetTop(iconRef, 'animate-imageTopGray origin-top-left');
+  const backGray = useOffsetTop(iconRef, 'animate-TopGray origin-top-right', 400);
 
-  const divStyle = {
+  // style
+  const divStyle: { [key: string]: string } = {
     writingMode: 'vertical-rl',
   };
 
   return (
-    <section className='relative'>
-      <div className='relative -top-28 right-0 mb-0 w-full h-auto'>
+    <section className='relative mb-96'>
+      <div className='relative -top-28 right-0 mb-8 w-full h-auto'>
         <Image
-          src={Images.CompanyTop.src}
-          alt={Images.CompanyTop.alt}
+          src={view.src}
+          alt={view.alt}
           priority={true}
           className='w-full rounded-tl-180 rounded-br-180'
         />
       </div>
       <div
         ref={iconRef}
-        className={`absolute -top-14 -right-16 -z-10 w-full h-coItem bg-gray_pale rounded-tl-200 rounded-br-200 opacity-0 ${backGray.scrollStyle}`}
+        className={`absolute -top-14 -right-16 -z-10 w-full h-coItem bg-skin rounded-tl-200 rounded-br-200 opacity-0 ${backGray.scrollStyle}`}
       ></div>
       <div className='relative z-30 bg-white rounded-96'>
-        <p style={divStyle}>CONTENTS</p>
         <div className='relative mx-auto w-CompanyText'>
-          <div className='mb-16'>
-            <h3 className='mb-8 text-3xl font-bold'>{LeadText.title}</h3>
-            <p className='leading-loose'>{LeadText.text}</p>
+          <div className='mb-28'>
+            <h3 className='mb-8 text-3xl font-bold'>{lead.title}</h3>
+            <p className='leading-loose'>{lead.text}</p>
           </div>
-          <div className='relative mb-96'>
-            {CompanyLink.map((items, index) => {
+          <div className='relative '>
+            <p style={divStyle} className='absolute top-12 -left-28 text-xl font-bold'>
+              CONTENTS
+            </p>
+            {company.suvNav.map((items, index) => {
               return (
                 <div className='py-8 border-b-2 border-gray_pale' key={index}>
                   <MenuLink href={items.path} ref={ref}>
@@ -78,4 +89,4 @@ const Lead: FC = () => {
   );
 };
 
-export default Lead;
+export default Contents;

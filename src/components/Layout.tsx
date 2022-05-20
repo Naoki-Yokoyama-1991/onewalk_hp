@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 import Header from './Header';
-import Hamburger from './home/libs/Hamburger';
+import Hamburger from './libs/Hamburger';
 
 type Props = {
   children?: ReactNode;

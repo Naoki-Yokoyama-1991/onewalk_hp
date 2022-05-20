@@ -18,6 +18,7 @@ module.exports = {
         menu: '36px',
         CompanyTop: '1240px',
         CompanyText: '860px',
+        '95%': '95%',
       },
       height: {
         small: '2px',
@@ -29,13 +30,16 @@ module.exports = {
         90: '90px',
         1.5: '1.5px',
         1.5: '1.5px',
+        830: '830px',
+        back: '800px',
       },
       maxWidth: {
         1080: '67.5rem',
         vw: '100vw',
       },
       margin: {
-        3: '3px',
+        ham: '3px',
+        nav: '12px',
         420: '420px',
       },
       colors: {
@@ -55,8 +59,10 @@ module.exports = {
       fontSize: {
         most: '8.5rem',
         moSecond: '7rem',
-        moSecondTitle: '6.7rem',
-        Third: '4.5rem',
+        moSecondTitle: '7rem',
+        four: '5rem',
+        Third: '5rem',
+        philosophy: '52px',
         menu: '44px',
       },
       fontFamily: {
@@ -91,7 +97,11 @@ module.exports = {
         News: 'minmax(0,1fr) 44rem',
         Careers: 'minmax(0,1fr) 42rem',
       },
+      gridTemplateRows: {
+        sub: 'minmax(0,1fr) 50%',
+      },
       scale: {
+        3: '0.3',
         1.2: '1.2',
         1.15: '1.15',
         1.08: '1.05',
@@ -106,6 +116,13 @@ module.exports = {
         116: '116px',
         smallTitle: '40px',
         coTitle: '50px',
+        '95%': '95%',
+        '86%': '86%',
+        300: '2150px',
+        1150: '1480px',
+        330: '330px',
+        outline: '460px',
+        nav: '4px',
       },
       rotate: {
         20: '30deg',
@@ -127,12 +144,12 @@ module.exports = {
           '100%': { bottom: '-62px', opacity: '0' },
         },
         navIn: {
-          '0%': { transform: 'translateY(-15%)', zIndex: -10, opacity: '0' },
-          '100%': { transform: 'translateY(0)', zIndex: -10, opacity: '1' },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         navOut: {
-          '0%': { transform: 'translateY(0px)', zIndex: -10, opacity: '1' },
-          '100%': { transform: 'translateY(-100px)', zIndex: -10, opacity: '0' },
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0' },
         },
         leftUnder: {
           '0%': { transform: 'scale(0, 1)' },
@@ -183,14 +200,18 @@ module.exports = {
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         imageTopGray: {
-          '0%': { opacity: '0', transform: 'translateX(30%)' },
+          '0%': { transform: 'scale(0, 1)', opacity: '0' },
+          '100%': { transform: 'scale(1, 1)', opacity: '1' },
+        },
+        TopGray: {
+          '0%': { opacity: '0', transform: 'translateX(10%)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
       animation: {
         wiggle: 'wiggle 10s linear 0s 1 normal both',
         circlemove: 'circlemove 2s ease-in-out infinite',
-        navIn: 'navIn 0.2s ease-out',
+        navIn: 'navIn 0.3s ease-out forwards',
         navOut: 'navOut 0.2s linear forwards',
         leftUnder: 'leftUnder 0.3s ',
         imageMove: 'imageMove ease-out 0.3s 0.3s forwards',
@@ -206,6 +227,7 @@ module.exports = {
         Back: 'Back  0.3s ',
         imageTopMove: 'imageTopMove ease-out 0.4s 0.3s forwards',
         imageTopGray: 'imageTopGray ease-out 0.4s  forwards',
+        TopGray: 'TopGray ease-out 0.3s  forwards',
       },
     },
   },
