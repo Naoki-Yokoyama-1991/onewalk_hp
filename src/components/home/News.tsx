@@ -50,7 +50,7 @@ const News: FC = () => {
           <span className='text-Third font-black leading-snug'>NEWS</span>
         </h2>
         <div className='absolute bottom-10'>
-          <ButtonLink />
+          <ButtonLink href={''} text={''} />
         </div>
       </div>
 

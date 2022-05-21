@@ -32,12 +32,6 @@ function MobileNav({
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const ref = useRef<HTMLAnchorElement>(null);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    setTimeout(() => {
-      setIsOpen(!isOpen);
-    }, 100);
-  };
 
   return (
     <>
@@ -72,7 +66,11 @@ function MobileNav({
                     <MenuLink href={item.path} ref={ref}>
                       <h3
                         className='inline-block mb-7 text-3xl font-semibold tracking-wide text-white hover:opacity-50 transition-all duration-300 ease'
-                        onClick={() => handleClick}
+                        onClick={() =>
+                          setTimeout(() => {
+                            setIsOpen(!isOpen);
+                          }, 100)
+                        }
                       >
                         {item.title}
                       </h3>
@@ -85,7 +83,11 @@ function MobileNav({
                               <MenuLink href={items.path} key={index} ref={ref}>
                                 <span
                                   className='flex justify-start items-center mt-4  text-white hover:opacity-50 transition-all duration-300 ease '
-                                  onClick={() => handleClick}
+                                  onClick={() =>
+                                    setTimeout(() => {
+                                      setIsOpen(!isOpen);
+                                    }, 100)
+                                  }
                                 >
                                   <span className='mr-3 w-2 h-2 rounded-sm border-t-2 border-r-2 border-white border-solid rotate-45 '></span>
                                   {items.title}
@@ -108,7 +110,6 @@ function MobileNav({
 
 const Hamburger: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const genericHamburgerLine = `h-0.5 my-ham rounded-full transition-all ease duration-300`;
 
   return (

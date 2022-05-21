@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import Careers from '../components/home/Careers';
+import Careers from '../components/home/Contact';
 import News from '../components/home/News';
 import Service from '../components/home/Service';
 import Tab from '../components/home/Tab';

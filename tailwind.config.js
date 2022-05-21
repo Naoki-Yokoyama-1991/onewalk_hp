@@ -19,6 +19,7 @@ module.exports = {
         CompanyTop: '1240px',
         CompanyText: '860px',
         '95%': '95%',
+        exe: '940px',
       },
       height: {
         small: '2px',
@@ -32,6 +33,7 @@ module.exports = {
         1.5: '1.5px',
         830: '830px',
         back: '800px',
+        exe: '360px',
       },
       maxWidth: {
         1080: '67.5rem',
@@ -85,6 +87,7 @@ module.exports = {
         80: '5rem',
         48: '3rem',
         20: '2rem',
+        40: '40px',
       },
       spacing: {
         82: '82px',
@@ -95,7 +98,8 @@ module.exports = {
         Vision: '33.75rem minmax(0,1fr) ',
         Service: 'minmax(0,1fr) 46rem',
         News: 'minmax(0,1fr) 44rem',
-        Careers: 'minmax(0,1fr) 42rem',
+        Contact: 'minmax(0,1fr) 37.5rem',
+        Outline: '24% minmax(0,1fr) ',
       },
       gridTemplateRows: {
         sub: 'minmax(0,1fr) 50%',
@@ -119,7 +123,8 @@ module.exports = {
         '95%': '95%',
         '86%': '86%',
         300: '2150px',
-        1150: '1480px',
+        history: '240px',
+        historyBack: '420px',
         330: '330px',
         outline: '460px',
         nav: '4px',

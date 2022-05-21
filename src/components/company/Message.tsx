@@ -34,11 +34,8 @@ const Message: React.FC<Props> = (props) => {
                 {item.text}
               </p>
             </div>
-
-            <div key={index}>
-              <p className='text-sm font-medium'>{item.position}</p>
-              <p className='mt-3 text-2xl '>{item.name}</p>
-            </div>
+            <p className='text-sm font-medium'>{item.position}</p>
+            <p className='mt-3 text-2xl '>{item.name}</p>
           </div>
         );
       })}

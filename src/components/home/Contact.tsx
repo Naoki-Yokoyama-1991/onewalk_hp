@@ -4,7 +4,7 @@ import ButtonLink from '../libs/ButtonLink';
 import useOffsetTop from '../libs/useScroll';
 import ImageObject from './Images';
 
-const Careers: FC = () => {
+const Contact: FC = () => {
   //text move
   const maxSize = 450;
   const minSize = 40;
@@ -23,7 +23,7 @@ const Careers: FC = () => {
   }, [pageOffset, viewportOffsetTop]);
 
   return (
-    <section className='mt-64 w-full '>
+    <section className='mt-64 mb-32 w-full '>
       <div className=' relative ml-auto w-CareersImage' ref={iconRef}>
         <Image
           src={ImageObject.CareerseImgs[0].src}
@@ -33,7 +33,7 @@ const Careers: FC = () => {
           objectFit='cover'
         />
       </div>
-      <div className='grid relative bottom-44 grid-cols-Careers items-end'>
+      <div className='grid relative bottom-44 grid-cols-Contact items-end'>
         <div
           ref={iconRef}
           className={`pt-14 mt-16 pr-12 bg-white rounded-80 opacity-0 ${textWhite.scrollStyle}`}
@@ -45,10 +45,10 @@ const Careers: FC = () => {
               transform: `translateY(-${iconSize}px)`,
             }}
           >
-            <span className='block ml-1 text-xl font-medium text-red'>採用情報</span>
-            <span className='text-Third font-black leading-snug uppercase'>Careers</span>
+            <span className='block ml-1 text-xl font-medium text-red'>お問合せ</span>
+            <span className='text-Third font-black leading-snug uppercase'>Contact</span>
           </h2>
-          <ButtonLink />
+          <ButtonLink href={'/contact'} text={''} />
         </div>
         <div className='ml-16'>
           <h3 className='mb-4 text-3xl font-bold leading-relaxed'>
@@ -63,4 +63,4 @@ const Careers: FC = () => {
   );
 };
 
-export default Careers;
+export default Contact;

@@ -61,7 +61,7 @@ export const HeadNavLink: FC<SubNav> = ({ item }) => {
                 <span
                   className={`${
                     item.suvNav
-                      ? 'inline-block relative -top-nav ml-4 w-2.5 h-2.5  border-b-3 border-r-3 border-red rotate-45 '
+                      ? 'inline-block relative -top-nav ml-3 w-2.5 h-2.5  border-b-3 border-r-3 border-red rotate-45 '
                       : ''
                   }`}
                 ></span>

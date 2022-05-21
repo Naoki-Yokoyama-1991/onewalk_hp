@@ -47,7 +47,7 @@ const Top: FC = () => {
           <p className='mb-20 leading-8'>
             この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入れてこの
           </p>
-          <ButtonLink />
+          <ButtonLink href={''} text={''} />
         </div>
         <div className='' ref={iconRef}>
           <Image

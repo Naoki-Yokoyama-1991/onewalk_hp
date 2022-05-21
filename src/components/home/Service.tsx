@@ -45,7 +45,6 @@ const Service: FC = () => {
         </h2>
       </div>
       <SliderItem />
-      {/* <ul className='grid grid-cols-4 gap-20 mt-20'>{items}</ul> */}
     </section>
   );
 };
