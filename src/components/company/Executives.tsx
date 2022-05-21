@@ -1,0 +1,31 @@
+import Image from 'next/image';
+import React, { FC } from 'react';
+import Images from './Images';
+import { Executives } from 'types';
+
+const Executives: FC = () => {
+  return (
+    <>
+      {Images.Executives.map(function (carouselItem: Executives, index) {
+        return (
+          <div className='last:mr-0 mb-10 w-64' key={index}>
+            <div className='relative mb-10 w-full  h-exe'>
+              <Image
+                src={carouselItem.src}
+                alt={carouselItem.alt}
+                className='w-full rounded-xl'
+                priority={true}
+                objectFit='cover'
+                layout='fill'
+              />
+            </div>
+            <p className='text-sm font-medium'>{carouselItem.position}</p>
+            <p className='mt-3 mb-10 text-xl font-medium '>{carouselItem.name}</p>
+          </div>
+        );
+      })}
+    </>
+  );
+};
+
+export default Executives;

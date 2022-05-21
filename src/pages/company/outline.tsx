@@ -2,12 +2,13 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import React from 'react';
-import Detail from '../../components/company/Message';
+import Detail from '../../components/company/Outline';
+
 import { OutlineTop } from '../../data/Images';
 import Date from '../../data/data.json';
 
 const Outline: NextPage = () => {
-  const lead = Date.data.company.message;
+  const lead = Date.data.company.outline;
   return (
     <>
       <Head>
@@ -29,8 +30,8 @@ const Outline: NextPage = () => {
             />
           </div>
         </div>
-        <section className='py-36 my-72 mx-auto w-full bg-white rounded-80'>
-          <div className='mx-auto w-CompanyText '>
+        <section className='py-32 mx-auto mt-72 mb-24 w-full bg-white rounded-tr-80'>
+          <div className='relative mx-auto w-CompanyText '>
             <Detail data={lead} />
           </div>
         </section>

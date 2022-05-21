@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
-const News = () => {
+const Contact = () => {
   return (
     <div>
       <Head>
-        <title>News</title>
+        <title>Contact</title>
       </Head>
       <div className='grid place-items-center h-screen'>
         <p className='text-6xl'>製作中</p>
@@ -13,4 +13,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Contact;

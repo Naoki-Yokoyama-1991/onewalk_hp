@@ -7,9 +7,7 @@ import Date from '../../data/data.json';
 
 const Philosophy: NextPage = () => {
   const iconRef = useRef(null);
-  const backRef = useRef(null);
   const backGray = useOffsetTop(iconRef, 'animate-imageTopGray origin-top-right', 400);
-  const backGraydown = useOffsetTop(backRef, 'animate-imageTopGray origin-top-left', 0);
   const lead = Date.data.company.philosophy;
   return (
     <>
@@ -27,7 +25,7 @@ const Philosophy: NextPage = () => {
             <p className='leading-loose'>{lead.text}</p>
           </div>
         </div>
-        <section className='mx-auto mb-72 w-full bg-white rounded-80'>
+        <section className='mx-auto mb-64 w-full bg-white rounded-80'>
           <div className='mx-auto w-CompanyText '>
             {lead.contents.map((item, index) => {
               return (
@@ -40,11 +38,7 @@ const Philosophy: NextPage = () => {
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-86% right-0 -z-20 w-60 h-830 bg-skin rounded-l-96 opacity-0 ${backGray.scrollStyle}`}
-        ></div>
-        <div
-          ref={backRef}
-          className={`absolute -bottom-300 left-0 -z-10 w-96 h-back bg-gray_pale rounded-r-96 opacity-0 ${backGraydown.scrollStyle}`}
+          className={`absolute top-86% right-0 -z-20 w-72 h-830 bg-skin rounded-l-96 rounded-br-96 opacity-0 ${backGray.scrollStyle}`}
         ></div>
       </main>
     </>

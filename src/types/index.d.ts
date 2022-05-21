@@ -18,6 +18,13 @@ declare module 'types' {
     className: string;
   }
 
+  export interface Executives {
+    src: StaticImageData;
+    alt: string;
+    position: string;
+    name: string;
+  }
+
   export interface ServiceDetail {
     src: StaticImageData;
     alt: string;
