@@ -12,7 +12,7 @@ const Company: NextPage = () => {
       <Head>
         <title>Company</title>
       </Head>
-      <main className='mx-auto max-w-1080'>
+      <main className='py-60  mx-auto max-w-1080'>
         <Top data={subRoutes} />
         <Contents data={Date.data.company} sub={subRoutes} view={View.CompanyTop} />
       </main>

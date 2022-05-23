@@ -49,7 +49,7 @@ module.exports = {
         red: '#ff0211',
         orange_pale: '#FDEFEE',
         skin: '#F5F2F0',
-        gray_pale: '#F9F9F9',
+        gray_pale: '#F8F8F8',
       },
       backgroundColor: {
         BaseColor: '#222222',
@@ -60,11 +60,11 @@ module.exports = {
       lineHeight: {},
       fontSize: {
         most: '8.5rem',
-        moSecond: '7rem',
-        moSecondTitle: '7rem',
+        moSecond: '6.8rem',
+        moSecondTitle: '6rem',
         four: '5rem',
-        Third: '5rem',
-        philosophy: '52px',
+        Third: '4.2rem',
+        philosophy: '50px',
         menu: '44px',
       },
       fontFamily: {

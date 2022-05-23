@@ -23,7 +23,7 @@ const Contact: FC = () => {
   }, [pageOffset, viewportOffsetTop]);
 
   return (
-    <section className='mt-64 mb-32 w-full '>
+    <section className='mt-64 mb-16 w-full '>
       <div className=' relative ml-auto w-CareersImage' ref={iconRef}>
         <Image
           src={ImageObject.CareerseImgs[0].src}

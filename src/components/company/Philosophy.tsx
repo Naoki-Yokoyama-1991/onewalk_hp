@@ -23,7 +23,7 @@ const Philosophy: React.FC<Props> = (props) => {
   return (
     <>
       <h3 className='flex items-center mb-10 text-philosophy font-black'>
-        <span className='inline-block mr-4 w-3.5 h-3.5 bg-red rounded-full '></span>
+        <span className='inline-block mr-4 w-3 h-3 bg-red rounded-full '></span>
         {props.data.title}
       </h3>
       <h2 className='mb-5 text-3xl font-bold'>{props.data.subTitle}</h2>

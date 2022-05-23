@@ -14,22 +14,19 @@ const Philosophy: NextPage = () => {
       <Head>
         <title>Philosophy</title>
       </Head>
-      <main className='mx-auto max-w-1080'>
-        <div className='grid grid-rows-sub items-center py-24 h-screen'>
-          <div className='mt-28'>
-            <h3 className='ml-1 text-xl font-medium text-red'>企業理念</h3>
-            <h1 className='text-Third font-black leading-tight text-left '>PHILOSOPHY</h1>
-          </div>
-          <div className='mt-28 w-CompanyText'>
-            <h3 className='mb-8 text-3xl font-bold'>{lead.title}</h3>
-            <p className='leading-loose'>{lead.text}</p>
-          </div>
+      <main className='py-60  mx-auto max-w-1080'>
+        <div className='mb-10'>
+          <h3 className='ml-1 text-xl font-medium text-red'>企業理念</h3>
+          <h1 className='text-Third font-black leading-tight text-left '>PHILOSOPHY</h1>
         </div>
-        <section className='mx-auto mb-64 w-full bg-white rounded-80'>
+        <section className='mx-auto w-full bg-white rounded-96'>
           <div className='mx-auto w-CompanyText '>
             {lead.contents.map((item, index) => {
               return (
-                <div key={index} className='py-28 border-b-2 last:border-b-0 border-gray_pale   '>
+                <div
+                  key={index}
+                  className='py-28 last:pb-0 border-b-2 last:border-b-0 border-gray_pale   '
+                >
                   <Detail data={item} />
                 </div>
               );
@@ -38,7 +35,7 @@ const Philosophy: NextPage = () => {
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-86% right-0 -z-20 w-72 h-830 bg-skin rounded-l-96 rounded-br-96 opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-72 right-0 -z-20 w-96 h-830 bg-skin rounded-tl-96  opacity-0 ${backGray.scrollStyle}`}
         ></div>
       </main>
     </>

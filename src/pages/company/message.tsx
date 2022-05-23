@@ -13,23 +13,21 @@ const Message: NextPage = () => {
       <Head>
         <title>Philosophy</title>
       </Head>
-      <main className='mx-auto max-w-1080'>
-        <div className='grid grid-rows-sub items-center py-24 h-screen '>
-          <div className='mt-28'>
-            <h3 className='ml-1 text-xl font-medium text-red'>代表メッセージ</h3>
-            <h1 className='text-Third font-black leading-tight text-left '>TOP MESSAGE</h1>
-          </div>
-          <div className='absolute -bottom-32 left-0 -z-20  mb-8 w-11/12 '>
-            <Image
-              src={MessageTop.src}
-              alt={MessageTop.alt}
-              priority={true}
-              className='w-full rounded-tr-180'
-              objectFit='cover'
-            />
-          </div>
+      <main className='py-60  mx-auto max-w-1080'>
+        <div className='mb-10'>
+          <h3 className='ml-1 text-xl font-medium text-red'>代表メッセージ</h3>
+          <h1 className='text-Third font-black leading-tight text-left '>TOP MESSAGE</h1>
         </div>
-        <section className='mx-auto mt-56 mb-72  w-full '>
+        <div className='mt-28 w-full '>
+          <Image
+            src={MessageTop.src}
+            alt={MessageTop.alt}
+            priority={true}
+            className='w-full rounded-tl-200'
+            objectFit='cover'
+          />
+        </div>
+        <section className='pt-32 mx-auto w-full '>
           <div className='mx-auto w-CompanyText '>
             <Detail data={lead} />
           </div>
