@@ -1,7 +1,7 @@
 // CAREERSE
 import Careers from './images/Careers.png';
 // SERVICE
-import Service from './images/ServiceRight.png';
+
 // TOP画面
 import Main_1 from './images/topMain_1.jpg';
 import Main_2 from './images/topMain_2.jpg';
