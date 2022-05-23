@@ -37,7 +37,7 @@ const News: FC = () => {
   }
 
   return (
-    <section className=' grid relative grid-cols-News mt-28 w-full '>
+    <section className=' grid relative grid-cols-News mt-24 w-full '>
       <div>
         <h2
           className='relative top-smallTitle mt-8 mb-12'

@@ -47,22 +47,17 @@ const Contents: FC<Date> = (props) => {
   };
 
   return (
-    <section className='relative mb-96'>
-      <div className='relative -top-28 right-0 mb-8 w-full h-auto'>
-        <Image
-          src={view.src}
-          alt={view.alt}
-          priority={true}
-          className='w-full rounded-tl-180 rounded-br-180'
-        />
+    <>
+      <div className='relative mt-28 w-full'>
+        <Image src={view.src} alt={view.alt} priority={true} className='w-full rounded-tl-180' />
+        <span
+          ref={iconRef}
+          className={`absolute top-9 -right-9 -z-10 w-full h-coItem bg-skin rounded-tl-200  opacity-0 ${backGray.scrollStyle}`}
+        ></span>
       </div>
-      <div
-        ref={iconRef}
-        className={`absolute -top-14 -right-16 -z-10 w-full h-coItem bg-skin rounded-tl-200 rounded-br-200 opacity-0 ${backGray.scrollStyle}`}
-      ></div>
-      <div className='relative z-30 bg-white rounded-96'>
+      <section className='pt-32 mx-auto w-full '>
         <div className='relative mx-auto w-CompanyText'>
-          <div className='mb-28'>
+          <div className='mb-20'>
             <h3 className='mb-8 text-3xl font-bold'>{lead.title}</h3>
             <p className='leading-loose'>{lead.text}</p>
           </div>
@@ -72,7 +67,10 @@ const Contents: FC<Date> = (props) => {
             </p>
             {company.suvNav.map((items, index) => {
               return (
-                <div className='py-8 border-b-2 border-gray_pale' key={index}>
+                <div
+                  className='py-8 last:pb-0 border-b-2 last:border-b-0 border-gray_pale'
+                  key={index}
+                >
                   <MenuLink href={items.path} ref={ref}>
                     <p className='group inline-block text-menu font-black  '>
                       <span className='inline-block relative bottom-3  mr-6 w-2.5 h-2.5 rounded-sm border-t-3 border-r-3 border-BaseColor group-hover:border-red border-solid transition-all duration-300 ease-out  rotate-45 group-hover:translate-x-2'></span>
@@ -84,8 +82,8 @@ const Contents: FC<Date> = (props) => {
             })}
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

@@ -31,7 +31,7 @@ const Service: FC = () => {
   }
 
   return (
-    <section className='mt-40 w-full '>
+    <section className='mt-24 w-full '>
       <div>
         <h2
           className='relative top-smallTitle mb-8 '

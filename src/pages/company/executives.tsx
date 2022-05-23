@@ -9,19 +9,17 @@ const Executives: NextPage = () => {
       <Head>
         <title>Executives</title>
       </Head>
-      <main className='mx-auto max-w-1080'>
-        <div className='grid grid-rows-sub items-center py-24 h-screen'>
-          <div className='mt-28'>
-            <h3 className='ml-1 text-xl font-medium text-red'>役員紹介</h3>
-            <h1 className='text-Third font-black leading-tight text-left '>EXECUTIVES</h1>
-          </div>
+      <main className='py-60  mx-auto max-w-1080'>
+        <div className='mb-10'>
+          <h3 className='ml-1 text-xl font-medium text-red'>役員紹介</h3>
+          <h1 className='text-Third font-black leading-tight text-left '>EXECUTIVES</h1>
         </div>
-        <section className='relative -top-72 w-exe bg-white rounded-80 '>
+        <section className='pt-24 mx-auto w-full '>
           <div className='flex items-center'>
-            <span className='inline-block mr-4 w-4 h-4 bg-red rounded-full'></span>
+            <span className='inline-block mr-4 w-3 h-3 bg-red rounded-full'></span>
             <p className='text-lg font-medium'>Board of Directors</p>
           </div>
-          <div className='grid grid-cols-3 gap-4 mt-14'>
+          <div className='grid grid-cols-3 gap-4 w-exe'>
             <Detail />
           </div>
         </section>

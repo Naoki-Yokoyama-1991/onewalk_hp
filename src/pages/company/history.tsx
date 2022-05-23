@@ -14,18 +14,16 @@ const History: NextPage = () => {
       <Head>
         <title>Philosophy</title>
       </Head>
-      <main className='mx-auto max-w-1080'>
-        <div className='grid grid-rows-sub items-center py-24 h-screen'>
-          <div className='mt-28'>
-            <h3 className='ml-1 text-xl font-medium text-red'>沿革</h3>
-            <h1 className='text-Third font-black leading-tight text-left '>HISTORY</h1>
-          </div>
+      <main className='py-60 mx-auto max-w-1080'>
+        <div className='mb-10'>
+          <h3 className='ml-1 text-xl font-medium text-red'>沿革</h3>
+          <h1 className='text-Third font-black leading-tight text-left '>HISTORY</h1>
         </div>
-        <section className='relative -top-history  mx-auto w-full bg-white rounded-80'>
+        <section className='relative  mx-auto w-full bg-white rounded-96'>
           <div className='mx-auto w-CompanyText '>
             {lead.map((item, index) => {
               return (
-                <div key={index} className='relative  py-10 last:py-0'>
+                <div key={index} className='relative py-10  first:pt-28 last:pb-0'>
                   <Detail data={item} />
                 </div>
               );
@@ -34,7 +32,7 @@ const History: NextPage = () => {
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-historyBack right-0 -z-20 w-96 h-830 bg-skin rounded-l-96 opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-72 right-0 -z-20 w-96 h-830 bg-skin rounded-tl-96  opacity-0 ${backGray.scrollStyle}`}
         ></div>
       </main>
     </>
