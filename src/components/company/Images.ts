@@ -1,8 +1,8 @@
 // Executives
-import H_1 from '../../../public/images/company/exe/companyA.jpg';
-import H_2 from '../../../public/images/company/exe/companyB.jpg';
-import H_3 from '../../../public/images/company/exe/companyC.jpg';
-import H_4 from '../../../public/images/company/exe/companyD.jpg';
+import H_1 from './images/companyA.jpg';
+import H_2 from './images/companyB.jpg';
+import H_3 from './images/companyC.jpg';
+import H_4 from './images/companyD.jpg';
 
 // Types
 import { Executives } from 'types';
