@@ -7,9 +7,7 @@ export type msgInfo = {
   text: string;
 };
 
-sgMail.setApiKey(process.env.KEY);
-
-const sendMail = async (info: msgInfo) => {
+const sendMails = async (info: msgInfo) => {
   const msg = {
     to: info.to,
     from: info.from,
@@ -26,4 +24,4 @@ const sendMail = async (info: msgInfo) => {
   }
 };
 
-export default sendMail;
+export default sendMails;
