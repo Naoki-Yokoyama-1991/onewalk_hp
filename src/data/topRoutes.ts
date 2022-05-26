@@ -27,3 +27,9 @@ export const subRoutes: textDate = {
     },
   ],
 };
+
+//Company Date Top & Menu
+export const news: textDate = {
+  title: 'NEWS',
+  text: 'ニュース一覧',
+};

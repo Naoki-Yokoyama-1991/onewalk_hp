@@ -60,11 +60,11 @@ const Top: React.FC = () => {
       <div className='grid place-items-center'>
         <div>
           <span
-            ref={prevRef}
+            ref={nextRef}
             className='block my-8 w-2 h-2  border-t-1.5 border-l-1.5 border-BaseColor hover:border-orange border-solid hover:transition-all duration-700 hover:duration-700 hover:scale-150 rotate-45 cursor-pointer'
           ></span>
           <span
-            ref={nextRef}
+            ref={prevRef}
             className='block my-8 w-2 h-2  border-r-1.5 border-b-1.5 border-BaseColor hover:border-orange  border-solid hover:transition-all duration-700 hover:duration-700 hover:scale-150 rotate-45 cursor-pointer'
           ></span>
         </div>

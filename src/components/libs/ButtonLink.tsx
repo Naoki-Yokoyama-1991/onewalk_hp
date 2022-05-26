@@ -30,9 +30,9 @@ const ButtonLink: FC<Props> = (props) => {
           >
             <button
               type='button'
-              className={`grid justify-center items-center px-7 mr-5 w-14 h-14  bg-red rounded-full  transition-all duration-700  ${classs}`}
+              className={`mr-5 grid h-14 w-14 items-center justify-center rounded-full  bg-red px-7  transition-all duration-700  ${classs}`}
             >
-              <span className='block w-2.5 h-2.5 rounded-sm border-t-3 border-r-3 border-white border-solid rotate-45'></span>
+              <span className='block h-2.5 w-2.5 rotate-45 rounded-sm border-t-3 border-r-3 border-solid border-white'></span>
             </button>
             <p className={`relative font-bold uppercase ${text}`}>
               {props.text ? props.text : '詳しく見る'}

@@ -9,8 +9,8 @@ import { HeadNavLink, FootNavLink } from './libs/MenuLink';
 export const HeaderNav: FC = () => {
   return (
     <>
-      <nav className='flex justify-between items-center pr-36 pl-20  h-24 bg-white'>
-        <div className='z-20 hover:transition-all duration-300 hover:duration-300 hover:scale-110 '>
+      <nav className='flex h-24 items-center justify-between bg-white  pr-36 pl-20'>
+        <div className='z-20 duration-300 hover:scale-110 hover:transition-all hover:duration-300 '>
           <Link href='/'>
             <a className='inline-flex items-center'>
               <Image
@@ -40,7 +40,7 @@ export const HeaderNav: FC = () => {
 
 export const FooterNav: FC = () => {
   return (
-    <nav className='flex justify-between mx-auto max-w-1080 '>
+    <nav className='mx-auto flex max-w-1080 justify-between '>
       <div>
         {footerRoutes.map((link, index) => (
           <FootNavLink key={index} path={link.path}>
