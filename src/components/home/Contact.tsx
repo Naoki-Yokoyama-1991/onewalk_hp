@@ -23,7 +23,7 @@ const Contact: FC = () => {
   }, [pageOffset, viewportOffsetTop]);
 
   return (
-    <section className='mt-64 mb-16 w-full '>
+    <section className='mt-72 mb-16 w-full '>
       <div className=' relative ml-auto w-CareersImage' ref={iconRef}>
         <Image
           src={ImageObject.CareerseImgs[0].src}
@@ -33,10 +33,10 @@ const Contact: FC = () => {
           objectFit='cover'
         />
       </div>
-      <div className='grid relative bottom-44 grid-cols-Contact items-end'>
+      <div className='relative bottom-44 grid grid-cols-Contact items-end'>
         <div
           ref={iconRef}
-          className={`pt-14 mt-16 pr-12 bg-white rounded-80 opacity-0 ${textWhite.scrollStyle}`}
+          className={`mt-16 rounded-80 bg-white pt-14 pr-12 opacity-0 ${textWhite.scrollStyle}`}
         >
           <h2
             className='relative top-coTitle mb-10'
@@ -45,8 +45,8 @@ const Contact: FC = () => {
               transform: `translateY(-${iconSize}px)`,
             }}
           >
-            <span className='block ml-1 text-xl font-medium text-red'>お問合せ</span>
-            <span className='text-Third font-black leading-snug uppercase'>Contact</span>
+            <span className='ml-1 block text-xl font-medium text-red'>お問合せ</span>
+            <span className='text-Third font-black uppercase leading-snug'>Contact</span>
           </h2>
           <ButtonLink href={'/contact'} text={''} />
         </div>

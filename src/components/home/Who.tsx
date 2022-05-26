@@ -30,15 +30,15 @@ const Top: FC = () => {
         style={{
           transform: `translateY(-${iconSize}px)`,
         }}
-        className='relative top-110 mb-16 text-most  font-black  leading-none text-center'
+        className='relative top-110 mb-16 text-center  text-most  font-black leading-none'
       >
         WHO WE WERE
       </h1>
-      <div className='grid grid-cols-Who gap-x-28 items-center'>
+      <div className='grid grid-cols-Who items-center gap-x-28'>
         <div className='relative'>
           <div
             ref={iconRef}
-            className={`absolute  bottom-80 -left-10 -z-10 w-whoitem h-whoItem  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
+            className={`absolute  bottom-80 -left-10 -z-10 h-whoItem w-whoitem  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
           ></div>
 
           <h3 className='mb-4 text-4xl font-bold leading-relaxed'>
@@ -47,7 +47,7 @@ const Top: FC = () => {
           <p className='mb-20 leading-8'>
             この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入れてこの
           </p>
-          <ButtonLink href={''} text={''} />
+          <ButtonLink href={'/'} text={''} />
         </div>
         <div className='' ref={iconRef}>
           <Image

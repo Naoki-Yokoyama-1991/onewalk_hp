@@ -70,7 +70,7 @@ declare module 'types' {
   export interface textDate {
     title: string;
     text: string;
-    suvNav: [
+    suvNav?: [
       {
         name: string;
         path: string;

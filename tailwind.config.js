@@ -1,7 +1,7 @@
 module.exports = {
   content: [],
   mode: 'jit',
-  purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       width: {
@@ -19,6 +19,7 @@ module.exports = {
         CompanyTop: '1240px',
         CompanyText: '860px',
         '95%': '95%',
+        0.6: '6px',
         exe: '940px',
       },
       height: {
@@ -30,10 +31,10 @@ module.exports = {
         serviceImage: '40rem',
         90: '90px',
         1.5: '1.5px',
-        1.5: '1.5px',
         830: '830px',
         back: '800px',
         exe: '360px',
+        0.6: '6px',
       },
       maxWidth: {
         1080: '67.5rem',
@@ -45,8 +46,8 @@ module.exports = {
         420: '420px',
       },
       colors: {
-        orange: '#E8614F',
-        red: '#ff0211',
+        orange: '#FF5B34',
+        red: '#FF5B34',
         orange_pale: '#FDEFEE',
         skin: '#F5F2F0',
         gray_pale: '#F8F8F8',
@@ -100,6 +101,7 @@ module.exports = {
         News: 'minmax(0,1fr) 44rem',
         Contact: 'minmax(0,1fr) 37.5rem',
         Outline: '24% minmax(0,1fr) ',
+        Form: 'minmax(0,1fr) 32rem',
       },
       gridTemplateRows: {
         sub: 'minmax(0,1fr) 50%',
@@ -236,5 +238,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // ...
+  ],
 };
