@@ -52,10 +52,10 @@ const Contents: FC<Date> = (props) => {
         <Image src={view.src} alt={view.alt} priority={true} className='w-full rounded-tl-180' />
         <span
           ref={iconRef}
-          className={`absolute top-9 -right-9 -z-10 w-full h-coItem bg-skin rounded-tl-200  opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-9 -right-9 -z-10 h-coItem w-full rounded-tl-200 bg-skin  opacity-0 ${backGray.scrollStyle}`}
         ></span>
       </div>
-      <section className='pt-32 mx-auto w-full '>
+      <section className='mx-auto w-full pt-32 '>
         <div className='relative mx-auto w-CompanyText'>
           <div className='mb-20'>
             <h3 className='mb-8 text-3xl font-bold'>{lead.title}</h3>
@@ -65,15 +65,15 @@ const Contents: FC<Date> = (props) => {
             <p style={divStyle} className='absolute top-12 -left-28 text-xl font-bold'>
               CONTENTS
             </p>
-            {company.suvNav.map((items, index) => {
+            {company.suvNav?.map((items, index) => {
               return (
                 <div
-                  className='py-8 last:pb-0 border-b-2 last:border-b-0 border-gray_pale'
+                  className='border-b-2 border-gray_pale py-8 last:border-b-0 last:pb-0'
                   key={index}
                 >
                   <MenuLink href={items.path} ref={ref}>
                     <p className='group inline-block text-menu font-black  '>
-                      <span className='inline-block relative bottom-3  mr-6 w-2.5 h-2.5 rounded-sm border-t-3 border-r-3 border-BaseColor group-hover:border-red border-solid transition-all duration-300 ease-out  rotate-45 group-hover:translate-x-2'></span>
+                      <span className='relative bottom-3 mr-6  inline-block h-2.5 w-2.5 rotate-45 rounded-sm border-t-3 border-r-3 border-solid border-BaseColor transition-all duration-300 ease-out  group-hover:translate-x-2 group-hover:border-red'></span>
                       {items.name}
                     </p>
                   </MenuLink>
