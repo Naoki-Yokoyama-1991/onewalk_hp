@@ -34,8 +34,9 @@ const News: NextPage<Props> = ({ allPosts }) => {
       <Head>
         <title>Company</title>
       </Head>
-      <main className='mx-auto  max-w-1080 py-60'>
-        <Top data={news} />
+      <main className='mx-auto  max-w-1080 py-48'>
+        <span className='mb-8 block font-semibold text-red'>NEWS</span>
+        <h3 className='mb-10 text-4xl font-semibold'>お知らせ / プレスリリース</h3>
         <ul className=''>{items}</ul>
       </main>
     </>
