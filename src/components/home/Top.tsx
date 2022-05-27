@@ -13,7 +13,7 @@ const Top: React.FC = () => {
   const nextRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='grid relative grid-cols-Top pt-24 h-screen '>
+    <div className='relative grid h-screen grid-cols-Top pt-24 '>
       <Swiper
         onSlideChange={(swiper) => {
           if (swiper.realIndex > 0) {
@@ -37,7 +37,7 @@ const Top: React.FC = () => {
         effect='fade'
         fadeEffect={{ crossFade: true }}
         loop={true}
-        className='w-full h-full rounded-tr-144'
+        className='h-full w-full rounded-tr-144'
       >
         {Images.MainImages.map((src: ImageDetail, index: number) => {
           return (
@@ -61,14 +61,14 @@ const Top: React.FC = () => {
         <div>
           <span
             ref={nextRef}
-            className='block my-8 w-2 h-2  border-t-1.5 border-l-1.5 border-BaseColor hover:border-orange border-solid hover:transition-all duration-700 hover:duration-700 hover:scale-150 rotate-45 cursor-pointer'
+            className='my-8 block h-2 w-2  rotate-45 cursor-pointer border-t-1.5 border-l-1.5 border-solid border-BaseColor duration-700 hover:scale-150 hover:border-orange hover:transition-all hover:duration-700'
           ></span>
           <span
             ref={prevRef}
-            className='block my-8 w-2 h-2  border-r-1.5 border-b-1.5 border-BaseColor hover:border-orange  border-solid hover:transition-all duration-700 hover:duration-700 hover:scale-150 rotate-45 cursor-pointer'
+            className='my-8 block h-2 w-2  rotate-45 cursor-pointer border-r-1.5 border-b-1.5  border-solid border-BaseColor duration-700 hover:scale-150 hover:border-orange hover:transition-all hover:duration-700'
           ></span>
         </div>
-        <span className='before:absolute after:absolute absolute after:top-16 before:bottom-10 bottom-24 before:left-1 after:left-1.5 after:w-1.5 before:w-2 before:h-2 text-xs tracking-wider before:content-[""] after:content-[""] before:bg-orange after:bg-BaseColor before:rounded-full before:animate-circlemove vertical '>
+        <span className='vertical absolute bottom-24 text-xs tracking-wider before:absolute before:bottom-10 before:left-1 before:h-2 before:w-2 before:animate-circlemove before:rounded-full before:bg-orange before:content-[""] after:absolute after:top-16 after:left-1.5 after:w-1.5 after:bg-BaseColor after:content-[""] '>
           SCROLL
         </span>
       </div>

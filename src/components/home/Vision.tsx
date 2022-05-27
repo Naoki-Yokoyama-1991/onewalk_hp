@@ -31,7 +31,7 @@ const Vision: FC = () => {
         <div className='relative' ref={iconRef}>
           <div
             ref={iconRef}
-            className={`absolute -top-14 left-20 -z-10 w-whoitem h-visionItem  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
+            className={`absolute -top-14 left-20 -z-10 h-visionItem w-whoitem  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
           ></div>
           <Image
             src={ImageObject.VisionImgs[0].src}
@@ -48,13 +48,13 @@ const Vision: FC = () => {
             style={{
               transform: `translateY(-${iconSize}px)`,
             }}
-            className='relative top-110 mt-8 mb-4 text-moSecond font-black  leading-none text-right'
+            className='relative top-110 mt-8 mb-4 text-right text-moSecond  font-black leading-none'
           >
             VISION<span className='block  text-4xl font-bold text-red'>2022</span>
           </h2>
           <div
             ref={iconRef}
-            className={`relative right-12 p-14 m-0 w-VisionText bg-white rounded-80  opacity-0 ${textWhite.scrollStyle}`}
+            className={`relative right-12 m-0 w-VisionText rounded-80 bg-white p-14  opacity-0 ${textWhite.scrollStyle}`}
           >
             <h3 className='mb-4 text-4xl font-bold leading-relaxed'>
               この文章はダミーです。文 字の大きさ、量、
