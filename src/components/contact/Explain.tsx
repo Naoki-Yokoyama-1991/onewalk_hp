@@ -1,6 +1,5 @@
-import Button from '../libs/ButtonLink';
-
 import React from 'react';
+import Button from '../libs/ButtonLink';
 
 const Explain: React.FC = () => {
   return (

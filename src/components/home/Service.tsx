@@ -24,7 +24,7 @@ const Service: FC = () => {
   for (let i = 0; i < 4; i++) {
     items.push(
       <li key={i} className='flex font-semibold'>
-        <span className='block pt-0.5 mr-2  font-bold text-center  rounded-lg'>0{i + 1}</span>
+        <span className='mr-2 block rounded-lg  pt-0.5 text-center  font-bold'>0{i + 1}</span>
         <p className='leading-7'>この文章はダミーです。 この文章はダミーです。</p>
       </li>,
     );
@@ -40,7 +40,7 @@ const Service: FC = () => {
             transform: `translateY(-${iconSize}px)`,
           }}
         >
-          <span className='block ml-1 text-xl font-medium text-red'>事業内容</span>
+          <span className='ml-1 block text-xl font-medium text-red'>事業内容</span>
           <span className='text-Third font-black leading-snug'>SERVICE</span>
         </h2>
       </div>

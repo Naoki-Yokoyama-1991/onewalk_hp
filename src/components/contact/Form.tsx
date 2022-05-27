@@ -1,8 +1,9 @@
-import React, { FC, useEffect } from 'react';
+/* eslint-disable @typescript-eslint/no-misused-promises */
 import { yupResolver } from '@hookform/resolvers/yup';
+import React, { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Input, Textarea, Checkbox } from './Input';
 import * as Yup from 'yup';
+import { Input, Textarea, Checkbox } from './Input';
 
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
@@ -84,7 +85,7 @@ const Form: FC = () => {
         {errors.terms && <p className='mt-4 text-red'>{errors.terms.message}</p>}
         <button
           type='submit'
-          className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red px-6    before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500 before:content-[""]  hover:before:scale-x-100'
+          className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red    px-6 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500  before:content-[""] hover:before:scale-x-100'
         >
           <p className='relative z-10 font-medium text-red duration-500 group-hover:text-white'>
             送信する
