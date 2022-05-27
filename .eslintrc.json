@@ -18,6 +18,7 @@
 
   "ignorePatterns": ["*.config.js"],
   "rules": {
+    "await-promise": [true, "Thenable"],
     "import/order": [
       "error",
       {
