@@ -63,3 +63,11 @@ export function getAllPosts(fields: string[] = []) {
     .sort((a, b) => (a.date > b.date ? -1 : 1));
   return posts;
 }
+
+export async function getStaticProps() {
+  // `getStaticProps()` の中で `fs` を少しでも利用すれば OK
+  fs;
+  return {
+    props: {},
+  };
+}
