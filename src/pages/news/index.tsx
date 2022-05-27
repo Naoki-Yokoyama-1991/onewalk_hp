@@ -3,7 +3,7 @@ import Top from '../../components/inc/Top';
 import { news } from '../../data/topRoutes';
 import type { NextPage, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
-import { getAllPosts } from '../utils/news';
+import { getAllPosts } from '../api/news';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

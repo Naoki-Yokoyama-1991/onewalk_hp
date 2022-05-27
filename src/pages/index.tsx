@@ -1,6 +1,6 @@
 import type { NextPage, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
-import { getAllPosts } from './utils/news';
+import { getAllPosts } from './api/news';
 import Careers from '../components/home/Contact';
 import News from '../components/home/News';
 import Service from '../components/home/Service';
