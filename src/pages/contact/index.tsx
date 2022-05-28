@@ -49,7 +49,7 @@ const Contact: NextPage = () => {
     // display form data on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
     try {
-      await fetch('/api/send', {
+      const res = await fetch('/api/send', {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
@@ -63,12 +63,8 @@ const Contact: NextPage = () => {
           'Content-Type': 'application/json',
         },
         method: 'POST',
-      }).then((res) => {
-        if (!res.ok) {
-          throw Error(`${res.status} ${res.statusText}`);
-        }
       });
-      void Router.push('/contact/complete');
+      if (!res.ok) Router.push('/contact/complete');
       reset();
     } catch (err) {
       console.log(err);
