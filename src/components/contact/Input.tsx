@@ -1,6 +1,6 @@
 import React from 'react';
 import { Path, UseFormRegister } from 'react-hook-form';
-import { Inputs } from './Form';
+import { Inputs } from '../../pages/contact';
 
 type InputProps = {
   label: Path<Inputs>;
