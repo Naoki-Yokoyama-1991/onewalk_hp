@@ -1,7 +1,7 @@
 import sgMail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
+sgMail.setApiKey('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');
 
 const sendMails = async (req: NextApiRequest, res: NextApiResponse) => {
   const msg = {
