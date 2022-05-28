@@ -7,6 +7,6 @@ module.exports = nextConfig;
 
 module.exports = {
   env: {
-    API: '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',
+    API: process.env.SENDGRID_API_KEY,
   },
 };
