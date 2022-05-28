@@ -43,28 +43,33 @@ const Form: FC = () => {
   const { register, handleSubmit, reset, formState } = useForm<Inputs>(formOptions);
   const { errors } = formState;
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data): Promise<void> => {
     // display form data on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    const res = await fetch('/api/mail', {
-      body: JSON.stringify({
-        name: data.name,
-        email: data.email,
-        subject: data.subject,
-        organization: data.organization,
-        department: data.department,
-        number: data.number,
-        detail: data.detail,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });
-    if (res.ok) {
-      Router.push('/contact/complete');
-    } else {
-      console.log('err');
+    try {
+      await fetch('../../pages/api/mail', {
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          organization: data.organization,
+          department: data.department,
+          number: data.number,
+          detail: data.detail,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }).then((res) => {
+        if (!res.ok) {
+          throw Error(`${res.status} ${res.statusText}`);
+        }
+      });
+      void Router.push('/contact/complete');
+      reset();
+    } catch (err) {
+      console.log(err);
     }
   };
 
