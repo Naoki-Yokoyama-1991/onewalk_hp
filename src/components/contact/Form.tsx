@@ -47,7 +47,7 @@ const Form: FC = () => {
     // display form data on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
     try {
-      await fetch('../../pages/api/mail', {
+      await fetch('/api/mail', {
         body: JSON.stringify({
           name: data.name,
           email: data.email,
