@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React, { FC } from 'react';
-import Images from './Image';
+import Images from './Images';
 import { Executives } from 'types';
 
 const Executives: FC = () => {
