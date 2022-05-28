@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { yupResolver } from '@hookform/resolvers/yup';
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Explain from '../../components/contact/Explain';
-
 import React, { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as Yup from 'yup';
@@ -79,61 +76,73 @@ const Contact: NextPage = () => {
 
   const Class = ' mb-11  border-b-2 border-gray_pale pb-7 ';
   return (
-    <>
-      <Head>
-        <title>Contact</title>
-      </Head>
-      <main className='mx-auto max-w-1080 py-48'>
-        <div className='grid grid-cols-Form gap-x-32'>
-          <Explain />
-          <form onSubmit={handleSubmit(onSubmit)} className='w-full' autoComplete='off'>
-            <div className={Class}>
-              <Input label='name' placeholder='お名前' register={register} />
-              {errors.name && <p className='mt-4 text-red'>{errors.name.message}</p>}
-            </div>
-            <div className={Class}>
-              <Input label='subject' placeholder='件名' register={register} />
-              {errors.subject && <p className='mt-4 text-red'>{errors.subject.message}</p>}
-            </div>
-            <div className={Class}>
-              <Input label='organization' placeholder='組織名' register={register} />
-              {errors.organization && (
-                <p className='mt-4 text-red'>{errors.organization.message}</p>
-              )}
-            </div>
-            <div className={Class}>
-              <Input label='department' placeholder='部署名' register={register} />
-              {errors.department && <p className='mt-4 text-red'>{errors.department.message}</p>}
-            </div>
-            <div className={Class}>
-              <Input label='email' placeholder='メールアドレス' register={register} />
-              {errors.email && <p className='mt-4 text-red'>{errors.email.message}</p>}
-            </div>
-            <div className={Class}>
-              <Input label='number' placeholder='お電話番号' register={register} />
-              {errors.number && <p className='mt-4 text-red'>{errors.number.message}</p>}
-            </div>
-            <div className={Class}>
-              <Textarea label='detail' placeholder='お問い合わせ内容' register={register} />
-              {errors.detail && <p className='mt-4 text-red'>{errors.detail.message}</p>}
-            </div>
-
-            <Checkbox label='terms' register={register} />
-            {errors.terms && <p className='mt-4 text-red'>{errors.terms.message}</p>}
-            <button
-              type='submit'
-              className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red    px-6 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500  before:content-[""] hover:before:scale-x-100'
-            >
-              <p className='relative z-10 font-medium text-red duration-500 group-hover:text-white'>
-                送信する
-              </p>
-              <span className='block h-2.5 w-2.5 rotate-45 rounded-sm border-t-3 border-r-3 border-solid border-red duration-500 group-hover:border-white'></span>
-            </button>
-          </form>
+    <main>
+      <form onSubmit={handleSubmit(onSubmit)} className='w-full' autoComplete='off'>
+        <div className={Class}>
+          <Input label='name' placeholder='お名前' register={register} />
+          {errors.name && <p className='mt-4 text-red'>{errors.name.message}</p>}
         </div>
-      </main>
-    </>
+        <div className={Class}>
+          <Input label='subject' placeholder='件名' register={register} />
+          {errors.subject && <p className='mt-4 text-red'>{errors.subject.message}</p>}
+        </div>
+        <div className={Class}>
+          <Input label='organization' placeholder='組織名' register={register} />
+          {errors.organization && <p className='mt-4 text-red'>{errors.organization.message}</p>}
+        </div>
+        <div className={Class}>
+          <Input label='department' placeholder='部署名' register={register} />
+          {errors.department && <p className='mt-4 text-red'>{errors.department.message}</p>}
+        </div>
+        <div className={Class}>
+          <Input label='email' placeholder='メールアドレス' register={register} />
+          {errors.email && <p className='mt-4 text-red'>{errors.email.message}</p>}
+        </div>
+        <div className={Class}>
+          <Input label='number' placeholder='お電話番号' register={register} />
+          {errors.number && <p className='mt-4 text-red'>{errors.number.message}</p>}
+        </div>
+        <div className={Class}>
+          <Textarea label='detail' placeholder='お問い合わせ内容' register={register} />
+          {errors.detail && <p className='mt-4 text-red'>{errors.detail.message}</p>}
+        </div>
+
+        <Checkbox label='terms' register={register} />
+        {errors.terms && <p className='mt-4 text-red'>{errors.terms.message}</p>}
+        <button
+          type='submit'
+          className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red    px-6 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500  before:content-[""] hover:before:scale-x-100'
+        >
+          <p className='relative z-10 font-medium text-red duration-500 group-hover:text-white'>
+            送信する
+          </p>
+          <span className='block h-2.5 w-2.5 rotate-45 rounded-sm border-t-3 border-r-3 border-solid border-red duration-500 group-hover:border-white'></span>
+        </button>
+      </form>
+    </main>
   );
 };
 
 export default Contact;
+
+// import type { NextPage } from 'next';
+// import Head from 'next/head';
+// import Form from '../../components/contact/Form';
+// import Explain from '../../components/contact/Explain';
+
+// const Contact: NextPage = () => {
+//   return (
+//     <>
+//       <Head>
+//         <title>Contact</title>
+//       </Head>
+//       <main className='mx-auto max-w-1080 py-48'>
+//         <div className='grid grid-cols-Form gap-x-32'>
+//           <Explain />
+//           <Form />
+//         </div>
+//       </main>
+//     </>
+//   );
+// };
+// export default Contact;
