@@ -5,12 +5,12 @@ interface Props {
     title: string;
     subTitle: string;
     text: string;
-    sub?:
-      | {
-          subOne: string;
-          text: string;
-        }[]
-      | undefined;
+    sub?: [
+      {
+        subOne: string;
+        text: string;
+      },
+    ];
   };
 }
 
@@ -22,8 +22,8 @@ const Philosophy: React.FC<Props> = (props) => {
 
   return (
     <>
-      <h3 className='flex items-center mb-10 text-philosophy font-black'>
-        <span className='inline-block mr-4 w-3 h-3 bg-red rounded-full '></span>
+      <h3 className='mb-10 flex items-center text-philosophy font-black'>
+        <span className='mr-4 inline-block h-3 w-3 rounded-full bg-red '></span>
         {props.data.title}
       </h3>
       <h2 className='mb-5 text-3xl font-bold'>{props.data.subTitle}</h2>

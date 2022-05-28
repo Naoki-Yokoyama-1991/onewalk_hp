@@ -3,9 +3,9 @@ import ErrorPage from 'next/error';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Button from '../components/libs/ButtonLink';
-import markdownToHtml from './api/markdownToHtml';
-import { getAllPosts, getPostBySlug } from './api/news';
+import Button from '../../components/libs/ButtonLink';
+import markdownToHtml from '../api/markdownToHtml';
+import { getAllPosts, getPostBySlug } from '../api/news';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 

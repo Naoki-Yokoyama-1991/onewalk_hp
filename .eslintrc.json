@@ -12,13 +12,13 @@
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "next",
     "next/core-web-vitals",
-    "prettier"
-    // "plugin:tailwindcss/recommended"
+    "prettier",
+    "plugin:tailwindcss/recommended"
   ],
 
   "ignorePatterns": ["*.config.js"],
   "rules": {
-    "await-promise": true,
+    "await-promise": [true, "Thenable"],
     "import/order": [
       "error",
       {

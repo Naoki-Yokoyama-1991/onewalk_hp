@@ -4,7 +4,8 @@ import React, { FC } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import * as Yup from 'yup';
 import { Input, Textarea, Checkbox } from './Input';
-
+import Router from 'next/router';
+console.log(process.env.SENDGRID_API_KEY as string);
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -13,9 +14,9 @@ export interface Inputs {
   subject: string;
   organization: string;
   department: string;
-  mail: string;
+  email: string;
   number: number;
-  detail: number;
+  detail: string;
   terms: boolean;
 }
 
@@ -26,7 +27,7 @@ const Form: FC = () => {
     subject: Yup.string().max(50, '50文字以内で入力してください').required('件名は必須です'),
     organization: Yup.string().max(50, '50文字以内で入力してください').required('組織名は必須です'),
     department: Yup.string().max(50, '50文字以内で入力してください').required('部署名は必須です'),
-    mail: Yup.string()
+    email: Yup.string()
       .email('メールアドレスの形式が正しくありません')
       .required('メールアドレスは必須です'),
     number: Yup.string()
@@ -42,10 +43,34 @@ const Form: FC = () => {
   const { register, handleSubmit, reset, formState } = useForm<Inputs>(formOptions);
   const { errors } = formState;
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+  const onSubmit: SubmitHandler<Inputs> = async (data): Promise<void> => {
     // display form data on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    reset();
+    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
+    try {
+      await fetch('/api/send', {
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          organization: data.organization,
+          department: data.department,
+          number: data.number,
+          detail: data.detail,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }).then((res) => {
+        if (!res.ok) {
+          throw Error(`${res.status} ${res.statusText}`);
+        }
+      });
+      void Router.push('/contact/complete');
+      reset();
+    } catch (err) {
+      void Router.push('/contact/error');
+    }
   };
 
   const Class = ' mb-11  border-b-2 border-gray_pale pb-7 ';
@@ -69,8 +94,8 @@ const Form: FC = () => {
           {errors.department && <p className='mt-4 text-red'>{errors.department.message}</p>}
         </div>
         <div className={Class}>
-          <Input label='mail' placeholder='メールアドレス' register={register} />
-          {errors.mail && <p className='mt-4 text-red'>{errors.mail.message}</p>}
+          <Input label='email' placeholder='メールアドレス' register={register} />
+          {errors.email && <p className='mt-4 text-red'>{errors.email.message}</p>}
         </div>
         <div className={Class}>
           <Input label='number' placeholder='お電話番号' register={register} />

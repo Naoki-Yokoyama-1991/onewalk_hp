@@ -1,31 +1,45 @@
-import type { NextPage } from 'next';
+import * as fs from 'fs';
+import * as path from 'path';
+import type { NextPage, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import React, { useRef } from 'react';
 import Detail from '../../components/company/Philosophy';
 import useOffsetTop from '../../components/libs/useScroll';
-import Date from '../../data/data.json';
 
-const Philosophy: NextPage = () => {
+type Philosophy = {
+  title: string;
+  subTitle: string;
+  text: string;
+  sub?: [
+    {
+      subOne: string;
+      text: string;
+    },
+  ];
+};
+
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Philosophy: NextPage<Props> = ({ philosophys }: Props) => {
   const iconRef = useRef(null);
   const backGray = useOffsetTop(iconRef, 'animate-imageTopGray origin-top-right', 400);
-  const lead = Date.data.company.philosophy;
   return (
     <>
       <Head>
         <title>Philosophy</title>
       </Head>
-      <main className='py-60  mx-auto max-w-1080'>
+      <main className='mx-auto  max-w-1080 py-60'>
         <div className='mb-10'>
           <h3 className='ml-1 text-xl font-medium text-red'>企業理念</h3>
-          <h1 className='text-Third font-black leading-tight text-left '>PHILOSOPHY</h1>
+          <h1 className='text-left text-Third font-black leading-tight '>PHILOSOPHY</h1>
         </div>
-        <section className='mx-auto w-full bg-white rounded-96'>
+        <section className='mx-auto w-full rounded-96 bg-white'>
           <div className='mx-auto w-CompanyText '>
-            {lead.contents.map((item, index) => {
+            {philosophys.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className='py-28 last:pb-0 border-b-2 last:border-b-0 border-gray_pale   '
+                  className='border-b-2 border-gray_pale py-28 last:border-b-0 last:pb-0   '
                 >
                   <Detail data={item} />
                 </div>
@@ -35,10 +49,21 @@ const Philosophy: NextPage = () => {
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-72 right-0 -z-20 w-96 h-830 bg-skin rounded-tl-96  opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-72 right-0 -z-20 h-830 w-96 rounded-tl-96 bg-skin  opacity-0 ${backGray.scrollStyle}`}
         ></div>
       </main>
     </>
   );
 };
 export default Philosophy;
+
+export const getStaticProps = async () => {
+  // JSON ファイルを読み込む
+  const jsonPath = path.join(process.cwd(), 'src', 'data', 'company', 'philosophy.json');
+  const jsonText = fs.readFileSync(jsonPath, 'utf-8');
+  const philosophys = JSON.parse(jsonText) as Philosophy[];
+
+  return {
+    props: { philosophys },
+  };
+};
