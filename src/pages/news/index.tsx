@@ -14,8 +14,8 @@ const News: NextPage<Props> = ({ allPosts }) => {
       key={post.slug}
       className='group grid grid-cols-1 items-center border-b border-gray-100 py-10 pr-7 hover:cursor-pointer'
     >
-      <Link href={post.slug}>
-        <a href={post.slug}>
+      <Link href={`/news/${post.slug}`}>
+        <a>
           <div className='flex items-center '>
             <span className='block text-sm  text-neutral-400'>{post.date}</span>
             <p className='ml-12'>

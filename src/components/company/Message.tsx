@@ -1,20 +1,12 @@
 import React from 'react';
 
 interface Props {
-  data: (
-    | {
-        title: string;
-        text: string;
-        position?: string;
-        name?: string;
-      }
-    | {
-        title: string;
-        text: string;
-        position: string;
-        name: string;
-      }
-  )[];
+  data: {
+    title: string;
+    text: string;
+    position?: string | undefined;
+    name?: string | undefined;
+  }[];
 }
 
 const Message: React.FC<Props> = (props) => {

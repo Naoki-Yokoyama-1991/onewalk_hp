@@ -23,14 +23,14 @@ const Outline: React.FC<Props> = (props) => {
     <>
       {props.data.map((item, index) => {
         return (
-          <div key={index} className='first:py-28 first:mb-28 first:border-b-2 border-gray_pale'>
-            <h3 className='flex items-center mb-10 text-philosophy font-black'>
-              <span className='inline-block mr-4 w-3 h-3 bg-red rounded-full '></span>
+          <div key={index} className='border-gray_pale first:mb-28 first:border-b-2 first:py-28'>
+            <h3 className='mb-10 flex items-center text-philosophy font-black'>
+              <span className='mr-4 inline-block h-3 w-3 rounded-full bg-red '></span>
               {item.title}
             </h3>
             {item.detail.map((item, index) => {
               return (
-                <div key={index} className='grid grid-cols-Outline mb-4'>
+                <div key={index} className='mb-4 grid grid-cols-Outline'>
                   <p className='font-bold'>{item.lead}</p>
                   <p style={divStyle} className=''>
                     {item.text}

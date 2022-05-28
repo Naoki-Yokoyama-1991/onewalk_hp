@@ -58,8 +58,6 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
  */
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  console.log(slugs);
-
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
     .sort((a, b) => (a.date > b.date ? -1 : 1));
