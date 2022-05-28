@@ -46,22 +46,31 @@ const Form: FC = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data): Promise<void> => {
     // display form data on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    const res = await fetch('/api/send', {
-      body: JSON.stringify({
-        name: data.name,
-        email: data.email,
-        subject: data.subject,
-        organization: data.organization,
-        department: data.department,
-        number: data.number,
-        detail: data.detail,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      method: 'POST',
-    });
-    if (res.ok) Router.push('/contact/complete');
+    try {
+      await fetch('/api/send', {
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          organization: data.organization,
+          department: data.department,
+          number: data.number,
+          detail: data.detail,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      }).then((res) => {
+        if (!res.ok) {
+          throw Error(`${res.status} ${res.statusText}`);
+        }
+      });
+      void Router.push('/contact/complete');
+      reset();
+    } catch (err) {
+      void Router.push('/contact/error');
+    }
   };
 
   const Class = ' mb-11  border-b-2 border-gray_pale pb-7 ';
