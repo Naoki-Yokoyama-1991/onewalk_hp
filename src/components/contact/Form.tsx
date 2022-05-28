@@ -5,7 +5,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import * as Yup from 'yup';
 import { Input, Textarea, Checkbox } from './Input';
 import Router from 'next/router';
-console.log(process.env.SENDGRID_API_KEY as string);
+
 const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -46,31 +46,22 @@ const Form: FC = () => {
   const onSubmit: SubmitHandler<Inputs> = async (data): Promise<void> => {
     // display form data on success
     // alert('SUCCESS!! :-)\n\n' + JSON.stringify(data, null, 4));
-    try {
-      await fetch('/api/send', {
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          organization: data.organization,
-          department: data.department,
-          number: data.number,
-          detail: data.detail,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      }).then((res) => {
-        if (!res.ok) {
-          throw Error(`${res.status} ${res.statusText}`);
-        }
-      });
-      void Router.push('/contact/complete');
-      reset();
-    } catch (err) {
-      void Router.push('/contact/error');
-    }
+    const res = await fetch('/api/send', {
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        organization: data.organization,
+        department: data.department,
+        number: data.number,
+        detail: data.detail,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    });
+    if (res.ok) Router.push('/contact/complete');
   };
 
   const Class = ' mb-11  border-b-2 border-gray_pale pb-7 ';
