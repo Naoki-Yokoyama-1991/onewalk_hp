@@ -69,7 +69,7 @@ const Form: FC = () => {
       void Router.push('/contact/complete');
       reset();
     } catch (err) {
-      void Router.push('/contact/error');
+      console.log(err);
     }
   };
 
