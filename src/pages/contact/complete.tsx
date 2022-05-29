@@ -13,9 +13,7 @@ const Contact: NextPage = () => {
             <h4 className='text-3xl text-red'>
               お問い合せ頂き誠にありがとうございます。
               <span className='mt-8 block text-xl font-normal leading-9 text-BaseColor'>
-                お問い合せに関する確認メールを送信いたしました。
-                <br />
-                ご確認お願いします。
+                確認メールを送信いたしました、ご確認お願いします。
               </span>
             </h4>
           </div>

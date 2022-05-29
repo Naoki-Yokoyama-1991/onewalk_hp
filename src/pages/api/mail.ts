@@ -1,7 +1,7 @@
 import sgMail from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-sgMail.setApiKey(process.env.API as string);
+sgMail.setApiKey(process.env.MAIL_KEY as string);
 
 const sendMails = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
@@ -67,7 +67,7 @@ const sendMails = async (req: NextApiRequest, res: NextApiResponse) => {
             '\n' +
             '  TEL : 011-788-3077' +
             '\n' +
-            '  Web : "https://one-walk.co.jp/"' +
+            '  Web : ' +
             '\n\n' +
             '-----------------------------------------------------------------------------------',
         };

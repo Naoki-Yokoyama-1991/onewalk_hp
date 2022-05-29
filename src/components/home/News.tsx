@@ -13,6 +13,7 @@ const News: FC<Pros> = (allPosts) => {
 
   const iconRef = useRef(null);
   const { pageOffset, viewportOffsetTop } = useOffsetTop(iconRef);
+  const backGray = useOffsetTop(iconRef, 'animate-imageGray origin-top-left', 400);
 
   // 要素の位置をもとにサイズを計算
   const iconSize = useMemo(() => {
@@ -40,6 +41,10 @@ const News: FC<Pros> = (allPosts) => {
         </div>
       </div>
       <div className='m-auto grid w-full grid-rows-3'>{allPosts.data}</div>
+      <div
+        ref={iconRef}
+        className={` absolute -left-64 top-96 -z-10 h-80 w-96  bg-gray_pale opacity-0 ${backGray.scrollStyle}`}
+      ></div>
     </section>
   );
 };
