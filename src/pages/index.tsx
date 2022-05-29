@@ -15,7 +15,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
   const items = allPosts.map((post) => (
     <div
       key={post.slug}
-      className='group grid grid-cols-1 items-center border-b border-gray-100 py-10 pr-7 hover:cursor-pointer'
+      className='group grid grid-cols-1 items-center border-b border-gray-100 py-10 pr-7 hover:cursor-pointer sm:last:border-none'
     >
       <Link href={`/news/${post.slug}`}>
         <a href={post.slug}>
@@ -38,7 +38,7 @@ const Home: NextPage<Props> = ({ allPosts }) => {
   return (
     <>
       <Top />
-      <main className='mx-auto max-w-1080'>
+      <main className='mx-auto max-w-1080 sm:w-full'>
         <Who />
         <Vision />
         <Service />

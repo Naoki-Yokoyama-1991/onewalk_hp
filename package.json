@@ -27,6 +27,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hook-form": "^7.31.2",
+    "react-responsive": "^9.0.0-beta.8",
     "react-slick": "^0.29.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",

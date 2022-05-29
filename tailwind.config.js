@@ -3,6 +3,11 @@ module.exports = {
   mode: 'jit',
   content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    screens: {
+      sm: { max: '540px' },
+      md: { max: '768px' },
+      tb: { max: '960px' },
+    },
     extend: {
       width: {
         whoitem: '33rem',
@@ -26,9 +31,11 @@ module.exports = {
         small: '2px',
         38: '38px',
         whoItem: '600px',
+        whoImage: '530px',
         coItem: '570px',
         visionItem: '23rem',
-        serviceImage: '40rem',
+        visionImage: '440px',
+        serviceImage: '470px',
         90: '90px',
         1.5: '1.5px',
         830: '830px',
@@ -115,6 +122,7 @@ module.exports = {
 
       inset: {
         18: '17px',
+        26: '26px',
         62: '58px',
         110: '65px',
         60: '80px',
