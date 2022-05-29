@@ -18,6 +18,8 @@
     "@sendgrid/mail": "^7.7.0",
     "@types/react-slick": "^0.23.8",
     "@zeit/next-css": "^1.0.1",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
     "gray-matter": "^4.0.3",
     "lodash": "^4.17.21",
     "next": "^12.1.6",
