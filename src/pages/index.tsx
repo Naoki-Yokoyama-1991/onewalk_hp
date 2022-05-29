@@ -20,18 +20,18 @@ const Home: NextPage<Props> = ({ allPosts }) => {
       <Link href={`/news/${post.slug}`}>
         <a href={post.slug}>
           <p className=''>
-            <span className='mb-5 flex items-center '>
+            <span className='mb-5 flex items-center'>
               <span className='block w-24 rounded-xl bg-gray_pale py-2 px-1.5 text-center text-xs font-bold'>
                 {post.date}
               </span>
-              <span className='ml-4  text-sm text-red'>{post.tags}</span>
+              <span className='ml-4 text-sm text-red'>{post.tags}</span>
             </span>
 
             <span className='text-lg font-bold leading-8'>{post.title}</span>
           </p>
         </a>
       </Link>
-      <span className='relative col-end-4 block  h-3 w-3 rotate-45  rounded-sm border-t-3  border-r-3  border-solid   border-red   opacity-0  group-hover:animate-ArrowRight'></span>
+      <span className='relative col-end-4 block  h-3 w-3 rotate-45  rounded-sm border-t-3  border-r-3  border-solid border-red opacity-0  group-hover:animate-ArrowRight sm:hidden'></span>
     </div>
   ));
 
