@@ -78,8 +78,8 @@ const SliderItem: FC = () => {
             <h3 className='mb-5 text-3xl font-bold leading-relaxed  sm:text-xl'>
               {carouselItem.title}
             </h3>
-            <p className=' mb-14 leading-8 sm:mb-8'>{carouselItem.text}</p>
-            <span className='absolute right-0 bottom-4 mr-20 text-xl font-bold leading-relaxed   sm:relative sm:bottom-2 sm:mr-0 sm:text-sm'>
+            <p className=' mb-14 leading-8 sm:mb-6'>{carouselItem.text}</p>
+            <span className='absolute right-0 bottom-4 mr-20 text-xl font-bold leading-relaxed   sm:relative sm:-bottom-4 sm:mr-0 sm:rounded-br-20  sm:bg-white sm:py-4 sm:px-6'>
               4 - {index + 1}
             </span>
           </div>
