@@ -36,16 +36,16 @@ function MobileNav({
   return (
     <>
       <div
-        className={`overflow-scroll py-16 bg-BaseColor fixed top-0 left-0 h-screen w-screen z-90 ${
-          isOpen ? 'opacity-1  visible' : 'opacity-0  invisible'
-        } transition-all duration-300 ease-out grid place-items-center`}
+        className={`fixed top-0 left-0 z-90 h-screen w-screen overflow-scroll bg-BaseColor py-16 sm:py-0 ${
+          isOpen ? 'opacity-1  visible' : 'invisible  opacity-0'
+        } grid place-items-center transition-all duration-300 ease-out`}
       >
         {isOpen && (
-          <div className='mx-auto max-w-1080 '>
-            <div className='flex'>
-              <div className='pr-24 mr-8 border-r-1 border-zinc-700'>
+          <div className='mx-auto max-w-1080 sm:w-72'>
+            <div className='flex sm:block'>
+              <div className='mr-8 border-r-1 border-zinc-700 pr-24 sm:mr-0 sm:mb-8 sm:border-b-1 sm:border-r-0 sm:px-2 sm:pr-0 sm:pb-8'>
                 <Link href='/'>
-                  <a className='flex items-center hover:opacity-50 transition-all duration-300 ease'>
+                  <a className='ease flex items-center transition-all duration-300 hover:opacity-50'>
                     <Image
                       src={ImageObject.whiteLogo[0].src}
                       width={32}
@@ -53,7 +53,7 @@ function MobileNav({
                       objectFit='contain'
                       alt={ImageObject.whiteLogo[0].alt}
                     />
-                    <span className='ml-4 text-2xl font-semibold text-white uppercase'>
+                    <span className='ml-4 text-2xl font-semibold uppercase text-white'>
                       ONEWALK
                     </span>
                   </a>
@@ -62,10 +62,13 @@ function MobileNav({
 
               {menuRoutes.map((item, index) => {
                 return (
-                  <div key={index} className='ml-16'>
+                  <div
+                    key={index}
+                    className='ml-16 sm:ml-0 sm:mb-6 sm:border-b-1 sm:border-zinc-700 sm:px-2 sm:pb-2 sm:last:mb-0 sm:last:border-none sm:last:pb-0'
+                  >
                     <MenuLink href={item.path} ref={ref}>
                       <h3
-                        className='inline-block mb-7 text-3xl font-semibold tracking-wide text-white hover:opacity-50 transition-all duration-300 ease'
+                        className='ease mb-7 inline-block text-3xl font-semibold tracking-wide text-white transition-all duration-300 hover:opacity-50 sm:mb-4 sm:text-2xl '
                         onClick={() =>
                           setTimeout(() => {
                             setIsOpen(!isOpen);
@@ -79,17 +82,17 @@ function MobileNav({
                       {item.suvNav !== undefined &&
                         item.suvNav.map((items, index) => {
                           return (
-                            <div key={index} className=''>
+                            <div key={index} className=' mt-4 sm:first:mt-2 sm:last:mb-6'>
                               <MenuLink href={items.path} key={index} ref={ref}>
                                 <span
-                                  className='flex justify-start items-center mt-4  text-white hover:opacity-50 transition-all duration-300 ease '
+                                  className='ease flex items-center justify-start  text-white transition-all duration-300 hover:opacity-50'
                                   onClick={() =>
                                     setTimeout(() => {
                                       setIsOpen(!isOpen);
                                     }, 100)
                                   }
                                 >
-                                  <span className='mr-3 w-2 h-2 rounded-sm border-t-2 border-r-2 border-white border-solid rotate-45 '></span>
+                                  <span className='mr-3 h-2 w-2 rotate-45 rounded-sm border-t-2 border-r-2 border-solid border-white '></span>
                                   {items.title}
                                 </span>
                               </MenuLink>
@@ -115,7 +118,7 @@ const Hamburger: FC = () => {
   return (
     <>
       <MobileNav isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className='absolute top-9 right-116 z-100'>
+      <div className='absolute top-9 right-116 z-100 sm:top-5 sm:right-16'>
         <div className='fixed'>
           <button
             className='group flex flex-col justify-center   rounded-48'
@@ -124,20 +127,22 @@ const Hamburger: FC = () => {
             <div
               className={`w-menu ${genericHamburgerLine} ${
                 isOpen
-                  ? 'bg-white rotate-20 translate-y-2  group-hover:opacity-50'
-                  : 'bg-BaseColor group-hover:opacity-50 '
+                  ? 'translate-y-2 rotate-20 bg-white  group-hover:opacity-50 sm:group-hover:opacity-100'
+                  : 'bg-BaseColor group-hover:opacity-50 sm:group-hover:opacity-100'
               }`}
             />
             <div
-              className={`w-7 mr-0 ml-auto ${genericHamburgerLine} ${
-                isOpen ? 'bg-white translate-x-2 opacity-0' : 'bg-BaseColor group-hover:opacity-50'
+              className={`mr-0 ml-auto w-7 ${genericHamburgerLine} ${
+                isOpen
+                  ? 'translate-x-2 bg-white opacity-0'
+                  : 'bg-BaseColor group-hover:opacity-50 sm:group-hover:opacity-100'
               }`}
             />
             <div
               className={` ${genericHamburgerLine} ${
                 isOpen
-                  ? 'w-menu bg-white -rotate-20 -translate-y-2  group-hover:opacity-50'
-                  : 'w-menu  bg-BaseColor group-hover:opacity-50'
+                  ? 'w-menu -translate-y-2 -rotate-20 bg-white  group-hover:opacity-50 sm:group-hover:opacity-100'
+                  : 'w-menu  bg-BaseColor group-hover:opacity-50 sm:group-hover:opacity-100'
               }`}
             />
           </button>

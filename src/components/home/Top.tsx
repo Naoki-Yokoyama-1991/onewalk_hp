@@ -13,7 +13,7 @@ const Top: React.FC = () => {
   const nextRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='relative grid h-screen grid-cols-Top pt-24 '>
+    <div className='relative grid h-screen grid-cols-Top pt-24 sm:block sm:w-full sm:pt-0'>
       <Swiper
         onSlideChange={(swiper) => {
           if (swiper.realIndex > 0) {
@@ -37,7 +37,7 @@ const Top: React.FC = () => {
         effect='fade'
         fadeEffect={{ crossFade: true }}
         loop={true}
-        className='h-full w-full rounded-tr-144'
+        className='h-full w-full rounded-tr-144 sm:rounded'
       >
         {Images.MainImages.map((src: ImageDetail, index: number) => {
           return (
@@ -58,7 +58,7 @@ const Top: React.FC = () => {
       </Swiper>
 
       <div className='grid place-items-center'>
-        <div>
+        <div className='sm:hidden'>
           <span
             ref={nextRef}
             className='my-8 block h-2 w-2  rotate-45 cursor-pointer border-t-1.5 border-l-1.5 border-solid border-BaseColor duration-700 hover:scale-150 hover:border-orange hover:transition-all hover:duration-700'

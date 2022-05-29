@@ -55,13 +55,13 @@ export const HeadNavLink: FC<SubNav> = ({ item }) => {
               <a
                 className={`${
                   router.pathname.startsWith(item.path) ? 'after:scale-x-3' : 'after:scale-x-0'
-                } inline-block relative after:absolute after:-bottom-1 after:left-0 z-30 after:w-full after:h-small font-semibold no-underline uppercase after:content-[""]   after:bg-orange after:duration-300   after:scale-y-100 hover:after:scale-x-100 after:origin-top-left `}
+                } relative z-30 inline-block font-semibold uppercase no-underline after:absolute after:-bottom-1 after:left-0 after:h-small after:w-full after:origin-top-left   after:scale-y-100 after:bg-orange   after:duration-300 after:content-[""] hover:after:scale-x-100 `}
               >
                 {item.title}
                 {item.suvNav ? (
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    className='inline-block relative -top-0.5 ml-2.5 w-4 h-4 text-red'
+                    className='relative -top-0.5 ml-2.5 inline-block h-4 w-4 text-red'
                     fill='none'
                     viewBox='0 0 24 24'
                     stroke='currentColor'
@@ -76,12 +76,12 @@ export const HeadNavLink: FC<SubNav> = ({ item }) => {
             </Link>
           </Menu.Button>
           <Transition show={isShown}>
-            <div className='absolute top-12 w-56 h-8 bg-white '></div>
+            <div className='absolute top-12 h-8 w-56 bg-white '></div>
             <Menu.Items
               as='div'
               className={`absolute top-20 ${
                 isShown ? ' visible animate-navIn' : 'invisible animate-navOut'
-              }  transition-all duration-300 ease-out opacity-0`}
+              }  opacity-0 transition-all duration-300 ease-out`}
             >
               {item.suvNav !== undefined &&
                 item.suvNav.map((items, index) => {
@@ -89,9 +89,9 @@ export const HeadNavLink: FC<SubNav> = ({ item }) => {
                     <MenuLink href={items.path} ref={ref} key={index}>
                       <Menu.Item
                         as='li'
-                        className='group py-5 px-14 font-semibold bg-gray_pale hover:bg-red transition-all duration-200'
+                        className='group bg-gray_pale py-5 px-14 font-semibold transition-all duration-200 hover:bg-red'
                       >
-                        <span className='group-hover:text-white transition-all duration-200'>
+                        <span className='transition-all duration-200 group-hover:text-white'>
                           {items.title}
                         </span>
                       </Menu.Item>
@@ -109,7 +109,9 @@ export const HeadNavLink: FC<SubNav> = ({ item }) => {
 export const FootNavLink: FC<Props> = ({ children, path }) => {
   return (
     <Link href={path} passHref>
-      <a className='inline-flex items-center'>{children}</a>
+      <a className='inline-flex items-center sm:mb-10 sm:block sm:border-b sm:border-gray_pale sm:pb-10 sm:last:border-none sm:last:pb-0'>
+        {children}
+      </a>
     </Link>
   );
 };

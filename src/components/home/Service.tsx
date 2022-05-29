@@ -20,32 +20,32 @@ const Service: FC = () => {
     return size.toFixed(1);
   }, [pageOffset, viewportOffsetTop]);
 
-  const items: JSX.Element[] = [];
-  for (let i = 0; i < 4; i++) {
-    items.push(
-      <li key={i} className='flex font-semibold'>
-        <span className='mr-2 block rounded-lg  pt-0.5 text-center  font-bold'>0{i + 1}</span>
-        <p className='leading-7'>この文章はダミーです。 この文章はダミーです。</p>
-      </li>,
-    );
-  }
-
   return (
-    <section className='mt-24 w-full '>
-      <div>
-        <h2
-          className='relative top-smallTitle mb-8 '
-          ref={iconRef}
-          style={{
-            transform: `translateY(-${iconSize}px)`,
-          }}
-        >
-          <span className='ml-1 block text-xl font-medium text-red'>事業内容</span>
-          <span className='text-Third font-black leading-snug'>SERVICE</span>
-        </h2>
-      </div>
-      <SliderItem />
-    </section>
+    <>
+      <style jsx>{`
+        @media (min-width: 541px) {
+          h2 {
+            transform: translateY(-${iconSize}px);
+          }
+        }
+      `}</style>
+      <section className='mt-24 w-full sm:mt-14 sm:border-b-2 sm:border-gray_pale sm:px-6 sm:pb-10'>
+        <div>
+          <h2
+            className='relative top-smallTitle mb-8 sm:top-0 sm:mb-10 sm:text-left '
+            ref={iconRef}
+          >
+            <span className='ml-1 block text-xl font-medium text-red sm:ml-0 sm:mb-2 sm:text-base'>
+              事業内容
+            </span>
+            <span className='text-Third font-black leading-snug sm:inline-block sm:text-4xl'>
+              SERVICE
+            </span>
+          </h2>
+        </div>
+        <SliderItem />
+      </section>
+    </>
   );
 };
 

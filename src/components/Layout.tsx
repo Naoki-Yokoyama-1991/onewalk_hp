@@ -16,7 +16,7 @@ const Layout = ({ children }: Props) => {
       </Head>
       <Hamburger />
       <Header />
-      <div>{children}</div>
+      <div className='sm:w-full '>{children}</div>
       <Footer />
     </>
   );
