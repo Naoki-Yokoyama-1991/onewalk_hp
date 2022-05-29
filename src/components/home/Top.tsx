@@ -68,7 +68,7 @@ const Top: React.FC = () => {
             className='my-8 block h-2 w-2  rotate-45 cursor-pointer border-r-1.5 border-b-1.5  border-solid border-BaseColor duration-700 hover:scale-150 hover:border-orange hover:transition-all hover:duration-700'
           ></span>
         </div>
-        <span className='vertical absolute bottom-24 text-xs tracking-wider before:absolute before:bottom-10 before:left-1 before:h-2 before:w-2 before:animate-circlemove before:rounded-full before:bg-orange before:content-[""] after:absolute after:top-16 after:left-1.5 after:w-1.5 after:bg-BaseColor after:content-[""] '>
+        <span className='vertical absolute bottom-24 text-xs tracking-wider before:absolute before:bottom-10 before:left-1 before:h-2 before:w-2 before:animate-circlemove before:rounded-full before:bg-orange before:content-[""] after:absolute after:top-16 after:left-1.5 after:w-1.5 after:bg-BaseColor after:content-[""] sm:hidden'>
           SCROLL
         </span>
       </div>
