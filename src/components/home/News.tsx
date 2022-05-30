@@ -47,7 +47,7 @@ const News: FC<Pros> = (allPosts) => {
             </span>
           </h2>
           <div className='absolute bottom-0 sm:bottom-14'>
-            <ButtonLink href={'/news'} text={''} />
+            <ButtonLink href={'/news'} text={'NEWS一覧へ'} />
           </div>
         </div>
         <div className='m-auto grid w-full grid-rows-3'>{allPosts.data}</div>

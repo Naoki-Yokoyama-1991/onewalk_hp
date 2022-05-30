@@ -26,30 +26,35 @@ const Outline: NextPage<Props> = ({ outlines }: Props) => {
   return (
     <>
       <Head>
-        <title>Philosophy</title>
+        <title>Outline</title>
       </Head>
-      <main className='mx-auto  max-w-1080 py-60'>
-        <div className='mb-10'>
-          <h3 className='ml-1 text-xl font-medium text-red'>会社情報</h3>
-          <h1 className='text-left text-Third font-black leading-tight '>OUTLINE</h1>
+      <main className='mx-auto max-w-1080 py-60  sm:w-full  sm:px-6  sm:py-0 sm:pt-28 sm:pb-6'>
+        <div className='mb-10 sm:mb-0'>
+          <h3 className='ml-1 text-xl font-medium text-red sm:ml-0 sm:mb-2 sm:text-base'>
+            会社情報
+          </h3>
+          <h1 className='text-left text-Third font-black leading-tight sm:inline-block  sm:text-4xl'>
+            OUTLINE
+          </h1>
         </div>
         <section className='mx-auto w-full rounded-96 bg-white'>
-          <div className='relative mx-auto w-CompanyText '>
+          <div className='relative mx-auto w-CompanyText sm:w-full '>
             <Detail data={outlines} />
           </div>
-          <div className='mt-32 w-full'>
+          <div className='relative mt-32 h-outlineImage w-full sm:mt-12 sm:h-52 '>
             <Image
               src={OutlineTop.src}
               alt={OutlineTop.alt}
               priority={true}
-              className='w-full rounded-tl-200'
+              className='w-full rounded-tl-200  sm:rounded-20 '
+              layout='fill'
               objectFit='cover'
             />
           </div>
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-72 right-0 -z-20 h-830 w-96 rounded-tl-96 bg-skin  opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-72 right-0 -z-20 h-830 w-96 rounded-tl-96 bg-skin  opacity-0 ${backGray.scrollStyle} sm:hidden`}
         ></div>
       </main>
     </>

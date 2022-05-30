@@ -7,6 +7,7 @@ import Service from '../components/home/Service';
 import Top from '../components/home/Top';
 import Vision from '../components/home/Vision';
 import Who from '../components/home/Who';
+import Head from 'next/head';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -37,6 +38,9 @@ const Home: NextPage<Props> = ({ allPosts }) => {
 
   return (
     <>
+      <Head>
+        <title>Top</title>
+      </Head>
       <Top />
       <main className='mx-auto max-w-1080 sm:w-full'>
         <Who />

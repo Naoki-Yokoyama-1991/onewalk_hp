@@ -34,7 +34,7 @@ const Top: FC = () => {
       `}</style>
       <h1
         ref={iconRef}
-        className='relative top-110 mb-16 text-center text-most font-black  leading-none  sm:top-0 sm:mb-10 sm:text-center sm:text-4xl sm:text-red'
+        className='relative top-110 mb-16 text-center text-most font-black  leading-none  sm:top-0 sm:mb-10 sm:text-left sm:text-smWho sm:text-red'
       >
         WHO WE WERE
       </h1>
@@ -52,10 +52,10 @@ const Top: FC = () => {
             この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入れてこの
           </p>
           <div className='sm:hidden'>
-            <ButtonLink href={'/'} text={''} />
+            <ButtonLink href={'/company/philosophy'} text={''} />
           </div>
         </div>
-        <div className='relative h-whoImage sm:mb-10  sm:mt-12 sm:h-52 sm:w-full' ref={iconRef}>
+        <div className='relative h-whoImage sm:mb-10  sm:mt-12 sm:h-48 sm:w-full' ref={iconRef}>
           <Image
             src={ImageObject.WhoImgs[0].src}
             alt={ImageObject.WhoImgs[0].alt}
@@ -66,7 +66,7 @@ const Top: FC = () => {
           />
         </div>
         <div className='hidden sm:block'>
-          <ButtonLink href={'/'} text={''} />
+          <ButtonLink href={'/company/philosophy'} text={''} />
         </div>
       </div>
     </section>

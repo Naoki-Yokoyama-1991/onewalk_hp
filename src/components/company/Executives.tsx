@@ -8,8 +8,8 @@ const Executives: FC = () => {
     <>
       {Images.Executives.map(function (carouselItem: Executives, index) {
         return (
-          <div className='mt-14 w-64' key={index}>
-            <div className='relative mb-8 h-exe  w-full'>
+          <div className='mt-14 w-64 sm:mt-6 sm:w-full' key={index}>
+            <div className='relative mb-8 h-exe  w-full sm:mb-6 sm:h-48'>
               <Image
                 src={carouselItem.src}
                 alt={carouselItem.alt}
@@ -20,7 +20,7 @@ const Executives: FC = () => {
               />
             </div>
             <p className='text-sm font-medium'>{carouselItem.position}</p>
-            <p className='mt-3 text-xl font-medium '>{carouselItem.name}</p>
+            <p className='mt-3 text-xl font-medium sm:text-lg '>{carouselItem.name}</p>
           </div>
         );
       })}

@@ -42,22 +42,30 @@ function MobileNav({
       >
         {isOpen && (
           <div className='mx-auto max-w-1080 sm:w-72'>
-            <div className='flex sm:block'>
-              <div className='mr-8 border-r-1 border-zinc-700 pr-24 sm:mr-0 sm:mb-8 sm:border-b-1 sm:border-r-0 sm:px-2 sm:pr-0 sm:pb-8'>
-                <Link href='/'>
-                  <a className='ease flex items-center transition-all duration-300 hover:opacity-50'>
-                    <Image
-                      src={ImageObject.whiteLogo[0].src}
-                      width={32}
-                      height={32}
-                      objectFit='contain'
-                      alt={ImageObject.whiteLogo[0].alt}
-                    />
-                    <span className='ml-4 text-2xl font-semibold uppercase text-white'>
-                      ONEWALK
-                    </span>
-                  </a>
-                </Link>
+            <div className='flex sm:block '>
+              <div className='border-r-1 border-zinc-700 pr-44 sm:mr-0 sm:mb-8 sm:border-b-1 sm:border-r-0 sm:px-2 sm:pr-0 sm:pb-8'>
+                <div className='relative mr-8 h-8 w-8 '>
+                  <Link href='/'>
+                    <a
+                      className='ease flex items-center transition-all duration-300 hover:opacity-50 '
+                      onClick={() =>
+                        setTimeout(() => {
+                          setIsOpen(!isOpen);
+                        }, 100)
+                      }
+                    >
+                      <Image
+                        src={ImageObject.whiteLogo[0].src}
+                        alt={ImageObject.whiteLogo[0].alt}
+                        layout='fill'
+                        objectFit='cover'
+                      />
+                      <span className='ml-12 text-2xl font-semibold uppercase text-white'>
+                        ONEWALK
+                      </span>
+                    </a>
+                  </Link>
+                </div>
               </div>
 
               {menuRoutes.map((item, index) => {

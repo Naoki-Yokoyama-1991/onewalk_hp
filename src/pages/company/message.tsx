@@ -20,24 +20,29 @@ const Message: NextPage<Props> = ({ messages }: Props) => {
   return (
     <>
       <Head>
-        <title>Philosophy</title>
+        <title>Message</title>
       </Head>
-      <main className='mx-auto  max-w-1080 py-60'>
-        <div className='mb-10'>
-          <h3 className='ml-1 text-xl font-medium text-red'>代表メッセージ</h3>
-          <h1 className='text-left text-Third font-black leading-tight '>TOP MESSAGE</h1>
+      <main className='mx-auto max-w-1080 py-60  sm:w-full  sm:px-6  sm:py-0 sm:pt-28 sm:pb-6'>
+        <div className='mb-10 sm:mb-0'>
+          <h3 className='ml-1 text-xl font-medium text-red sm:ml-0 sm:mb-2 sm:text-base'>
+            代表メッセージ
+          </h3>
+          <h1 className='text-left text-Third font-black leading-tight sm:inline-block  sm:text-4xl'>
+            TOP MESSAGE
+          </h1>
         </div>
-        <div className='mt-28 w-full '>
+        <div className='relative mt-28 h-serviceImage sm:mt-12 sm:h-52 sm:w-full'>
           <Image
             src={MessageTop.src}
             alt={MessageTop.alt}
             priority={true}
-            className='w-full rounded-tl-200'
+            className='w-full rounded-tl-200 sm:rounded-20'
+            layout='fill'
             objectFit='cover'
           />
         </div>
-        <section className='mx-auto w-full pt-32 '>
-          <div className='mx-auto w-CompanyText '>
+        <section className='mx-auto  w-full pt-32  sm:pt-10'>
+          <div className='mx-auto w-CompanyText sm:w-full'>
             <Detail data={messages} />
           </div>
         </section>

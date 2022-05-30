@@ -68,7 +68,7 @@ const Vision: FC = () => {
               この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れてこの文章はダミvーです。文字の大きさ、量、字間、行間等を確認するために入
             </p>
           </div>
-          <div className='relative hidden sm:mt-12 sm:block sm:h-52 sm:w-full'>
+          <div className='relative hidden sm:mt-12 sm:block sm:h-48 sm:w-full'>
             <Image
               src={ImageObject.VisionImgs[0].src}
               alt={ImageObject.VisionImgs[0].alt}
