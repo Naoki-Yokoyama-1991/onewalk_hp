@@ -62,9 +62,18 @@ const Post: NextPage<Props> = ({ post }) => {
             <span className='ml-4 text-sm text-red '>{post.tags}</span>
           </span>
           <h1 className='text-3xl font-bold sm:text-xl '>{post.title}</h1>
-          <div className='border-gray_pal 0 mt-20  border-t-1 border-solid py-20 sm:mb-8 sm:mt-14 sm:border-none sm:py-0'>
-            <Image src={`/${post.image}`} objectFit='cover' alt='' width={860} height={420} />
+          <div className='border-gray_pal mt-20 border-t-1  border-solid py-20 sm:mt-10 sm:mb-8 sm:border-none sm:py-0'>
+            <div className='relative  h-visionImage   sm:h-48 '>
+              <Image
+                src={`/${post.image}`}
+                layout='fill'
+                objectFit='cover'
+                priority={true}
+                className='sm:rounded-20'
+              />
+            </div>
           </div>
+
           <div
             className='prose mb-20 max-w-none sm:mb-12'
             dangerouslySetInnerHTML={{ __html: post.content }}

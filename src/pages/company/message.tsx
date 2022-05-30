@@ -31,7 +31,7 @@ const Message: NextPage<Props> = ({ messages }: Props) => {
             TOP MESSAGE
           </h1>
         </div>
-        <div className='relative mt-28 h-serviceImage sm:mt-12 sm:h-52 sm:w-full'>
+        <div className='relative mt-28 h-serviceImage sm:mt-12 sm:h-48 sm:w-full'>
           <Image
             src={MessageTop.src}
             alt={MessageTop.alt}
