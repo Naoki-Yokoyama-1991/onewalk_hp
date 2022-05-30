@@ -1,7 +1,7 @@
 ---
 title: 'コーポレートサイトをリニューアルしました。コーポ'
 date: '20210912'
-image: images/top.jpg
+image: images/slug.jpg
 tags: ['プレスリリース']
 ---
 
