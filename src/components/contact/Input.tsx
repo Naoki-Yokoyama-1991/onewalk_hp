@@ -30,7 +30,7 @@ export const Input = ({ label, register, placeholder }: InputProps) => (
 export const Textarea = ({ label, register, placeholder }: InputProps) => (
   <label htmlFor={label} className='flex justify-between'>
     <textarea
-      className=' h-48 w-full resize-none  outline-0 placeholder:text-neutral-400'
+      className=' h-48 w-full resize-none outline-0  placeholder:text-neutral-400 sm:h-24'
       placeholder={placeholder}
       {...register(label)}
     />
@@ -43,7 +43,9 @@ export const Checkbox = ({ label, register }: CheckboxProps) => (
     <label htmlFor={label} className='flex justify-between'>
       <div className='flex'>
         <input type='checkbox' {...register(label)} className=' h-5 w-5 ' />
-        <span className='ml-3 text-sm'>ご提供いただく 個人情報の取り扱い方針に同意する</span>
+        <span className='ml-3 text-sm sm:mr-10'>
+          ご提供いただく個人情報の取り扱い方針に同意する
+        </span>
       </div>
       <span className='relative -bottom-1.5 inline-block h-0.6 w-0.6 rounded-full bg-red'></span>
     </label>

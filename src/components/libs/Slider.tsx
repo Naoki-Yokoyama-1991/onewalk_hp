@@ -83,7 +83,7 @@ const SliderItem: FC = () => {
               4 - {index + 1}
             </span>
           </div>
-          <div className='sm:w-ful relative h-serviceImage sm:h-52' ref={iconRef}>
+          <div className='sm:w-ful relative h-serviceImage sm:h-48' ref={iconRef}>
             <Image
               src={carouselItem.src}
               alt={carouselItem.alt}

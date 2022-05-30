@@ -28,18 +28,22 @@ const Philosophy: NextPage<Props> = ({ philosophys }: Props) => {
       <Head>
         <title>Philosophy</title>
       </Head>
-      <main className='mx-auto  max-w-1080 py-60'>
-        <div className='mb-10'>
-          <h3 className='ml-1 text-xl font-medium text-red'>企業理念</h3>
-          <h1 className='text-left text-Third font-black leading-tight '>PHILOSOPHY</h1>
+      <main className='mx-auto max-w-1080 py-60  sm:w-full  sm:px-6  sm:py-0 sm:pt-28 sm:pb-6'>
+        <div className='mb-10 sm:mb-0'>
+          <h3 className='ml-1 text-xl font-medium text-red sm:ml-0 sm:mb-2 sm:text-base'>
+            企業理念
+          </h3>
+          <h1 className='text-left text-Third font-black leading-tight sm:inline-block sm:text-4xl'>
+            PHILOSOPHY
+          </h1>
         </div>
         <section className='mx-auto w-full rounded-96 bg-white'>
-          <div className='mx-auto w-CompanyText '>
+          <div className='mx-auto w-CompanyText sm:w-full '>
             {philosophys.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className='border-b-2 border-gray_pale py-28 last:border-b-0 last:pb-0   '
+                  className='border-b-2 border-gray_pale py-28 last:border-b-0 last:pb-0 sm:py-12   '
                 >
                   <Detail data={item} />
                 </div>
@@ -49,7 +53,7 @@ const Philosophy: NextPage<Props> = ({ philosophys }: Props) => {
         </section>
         <div
           ref={iconRef}
-          className={`absolute top-72 right-0 -z-20 h-830 w-96 rounded-tl-96 bg-skin  opacity-0 ${backGray.scrollStyle}`}
+          className={`absolute top-72 right-0 -z-20 h-830 w-96 rounded-tl-96 bg-skin  opacity-0 ${backGray.scrollStyle} sm:hidden`}
         ></div>
       </main>
     </>

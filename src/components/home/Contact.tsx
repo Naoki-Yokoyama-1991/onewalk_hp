@@ -33,7 +33,7 @@ const Contact: FC = () => {
       `}</style>
       <section className='mt-72 w-full sm:mt-14 sm:border-b-2 sm:border-gray_pale sm:px-6 sm:pb-36'>
         <div
-          className=' sm:mt-2sm:ml-0 relative ml-auto h-serviceImage w-CareersImage sm:h-52  sm:w-full'
+          className=' relative ml-auto h-serviceImage w-CareersImage sm:mt-2 sm:ml-0 sm:h-48  sm:w-full'
           ref={iconRef}
         >
           <Image
@@ -48,7 +48,7 @@ const Contact: FC = () => {
         <div className='relative bottom-44 grid grid-cols-Contact items-end sm:bottom-0 sm:block'>
           <div
             ref={iconRef}
-            className={`mt-16 rounded-80 bg-white pt-14 pr-12 opacity-0 ${textWhite.scrollStyle} sm:mt-0 sm:animate-none sm:bg-transparent sm:opacity-100`}
+            className={`mt-16 rounded-80 bg-white pt-14 pr-12 opacity-0 ${textWhite.scrollStyle} sm:mt-0 sm:animate-none sm:bg-transparent sm:pt-12 sm:opacity-100`}
           >
             <h2
               className='relative top-coTitle mb-10  sm:top-0 sm:mb-10 sm:text-left'
@@ -62,7 +62,7 @@ const Contact: FC = () => {
               </span>
             </h2>
             <div className='sm:absolute sm:-bottom-24'>
-              <ButtonLink href={'/contact'} text={''} />
+              <ButtonLink href={'/contact'} text={'お問合せする'} />
             </div>
           </div>
           <div className='ml-16 sm:ml-0'>

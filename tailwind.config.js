@@ -36,6 +36,7 @@ module.exports = {
         visionItem: '23rem',
         visionImage: '440px',
         serviceImage: '470px',
+        outlineImage: '540px',
         90: '90px',
         1.5: '1.5px',
         830: '830px',
@@ -74,6 +75,7 @@ module.exports = {
         Third: '4.2rem',
         philosophy: '50px',
         menu: '44px',
+        smWho: '40px',
       },
       fontFamily: {
         base: ['Lato', 'Noto Sans JP'],
@@ -138,6 +140,7 @@ module.exports = {
         330: '330px',
         outline: '460px',
         nav: '4px',
+        company: '5px',
       },
       rotate: {
         20: '30deg',

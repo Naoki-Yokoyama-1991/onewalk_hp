@@ -31,8 +31,8 @@ const Form: FC = () => {
       .email('メールアドレスの形式が正しくありません')
       .required('メールアドレスは必須です'),
     number: Yup.string()
-      .matches(phoneRegExp, '電話番号の形式が正しくありません')
-      .required('お電話番号は必須です'),
+      .required('お電話番号は必須です')
+      .matches(phoneRegExp, '電話番号の形式が正しくありません'),
     detail: Yup.string().required('お問い合わせ内容は必須です'),
     terms: Yup.boolean().oneOf([true], 'チェックを入れる必要があります'),
   });
@@ -66,7 +66,10 @@ const Form: FC = () => {
           throw Error(`${res.status} ${res.statusText}`);
         }
       });
-      void Router.push('/contact/complete');
+      void Router.push({
+        pathname: '/contact/complete',
+        query: { code: 'ok' },
+      });
       reset();
     } catch (err) {
       console.log(err);
@@ -110,7 +113,7 @@ const Form: FC = () => {
         {errors.terms && <p className='mt-4 text-red'>{errors.terms.message}</p>}
         <button
           type='submit'
-          className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red    px-6 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500  before:content-[""] hover:before:scale-x-100'
+          className='group relative mt-20 flex h-14 w-52 items-center justify-between overflow-hidden rounded-full border-2 border-solid border-red    px-6 before:absolute before:top-0 before:left-0 before:h-full before:w-full before:origin-top-left before:scale-y-100 before:scale-x-0 before:bg-red before:duration-500  before:content-[""] hover:before:scale-x-100 sm:mt-12 sm:w-full '
         >
           <p className='relative z-10 font-medium text-red duration-500 group-hover:text-white'>
             送信する

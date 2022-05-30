@@ -20,14 +20,14 @@ const Message: React.FC<Props> = (props) => {
       {props.data.map((item, index) => {
         return (
           <div key={index}>
-            <div className='mb-24'>
-              <h3 className=' mb-10 text-3xl font-bold'>{item.title}</h3>
+            <div className='mb-24 sm:mb-12'>
+              <h3 className='mb-10 text-3xl font-bold sm:mb-4 sm:text-xl'>{item.title}</h3>
               <p style={divStyle} className=''>
                 {item.text}
               </p>
             </div>
             <p className='text-sm font-medium'>{item.position}</p>
-            <p className='mt-3 text-2xl '>{item.name}</p>
+            <p className='mt-3 text-2xl font-medium sm:mt-2 sm:text-lg'>{item.name}</p>
           </div>
         );
       })}
