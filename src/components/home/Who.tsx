@@ -26,7 +26,7 @@ const Top: FC = () => {
   return (
     <section className='mt-28 w-full sm:mt-14 sm:border-b-2 sm:border-gray_pale sm:px-6 sm:pb-14'>
       <style jsx>{`
-        @media (min-width: 541px) {
+        @media (min-width: 641px) {
           h1 {
             transform: translateY(-${iconSize}px);
           }

@@ -26,7 +26,9 @@ const Message: React.FC<Props> = (props) => {
                 {item.text}
               </p>
             </div>
-            <p className='text-sm font-medium'>{item.position}</p>
+            <p style={divStyle} className='text-sm font-medium'>
+              {item.position}
+            </p>
             <p className='mt-3 text-2xl font-medium sm:mt-2 sm:text-lg'>{item.name}</p>
           </div>
         );

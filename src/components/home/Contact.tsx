@@ -25,7 +25,7 @@ const Contact: FC = () => {
   return (
     <>
       <style jsx>{`
-        @media (min-width: 541px) {
+        @media (min-width: 641px) {
           h2 {
             transform: translateY(-${iconSize}px);
           }
