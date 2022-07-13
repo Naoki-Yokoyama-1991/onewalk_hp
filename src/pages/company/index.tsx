@@ -20,7 +20,7 @@ const Company: NextPage<Props> = ({ tops }: Props) => {
       <Head>
         <title>Company</title>
       </Head>
-      <main className='mx-auto max-w-1080 py-60  sm:w-full  sm:px-6  sm:py-0 sm:pt-28 sm:pb-6'>
+      <main className='mx-auto max-w-1080 py-60 px-8  sm:w-full  sm:px-6  sm:py-0 sm:pt-28 sm:pb-6'>
         <Top data={subRoutes} />
         <Contents data={tops} sub={subRoutes} view={View.CompanyTop} />
       </main>

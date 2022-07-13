@@ -4,7 +4,7 @@ module.exports = {
   content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: { max: '540px' },
+      sm: { max: '640px' },
       md: { max: '768px' },
       tb: { max: '960px' },
     },
